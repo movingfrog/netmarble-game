@@ -31,7 +31,6 @@ public class PlayerMove : MonoBehaviour
         {
             jumpPower = maxJump;
         }
-        Jump();
         if (!Input.GetKey(KeyCode.C))
             jumpPower = 0;
     }
@@ -65,14 +64,4 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void Jump()
-    {
-
-        if (Input.GetKeyUp(KeyCode.C) && !IsGround && !IsJump)
-        {
-            Debug.Log("afds");
-            rb.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
-            IsJump = true;
-        }
-    }
 }
