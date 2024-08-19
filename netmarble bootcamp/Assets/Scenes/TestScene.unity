@@ -506,8 +506,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpPower: 0
-  maxJump: 10
+  jumpPower: 4
+  plusJumpPower: 50
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
