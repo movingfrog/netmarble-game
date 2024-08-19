@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
@@ -54,24 +51,24 @@ public class PlayerMove : MonoBehaviour
 
     public void Move()
     {
-            if(Input.GetAxisRaw("Horizontal") > 0)
-            {
-                rb.velocity= new Vector2(speed, rb.velocity.y);
-            }
-            else if (Input.GetAxisRaw("Horizontal") < 0)
-            {
-                rb.velocity = new Vector2(-speed, rb.velocity.y);
-            }
-            else
-            {
-                rb.velocity = new Vector2(0, rb.velocity.y);
-            }
+        if (Input.GetAxisRaw("Horizontal") > 0)
+        {
+            rb.velocity = new Vector2(speed, rb.velocity.y);
+        }
+        else if (Input.GetAxisRaw("Horizontal") < 0)
+        {
+            rb.velocity = new Vector2(-speed, rb.velocity.y);
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
     }
-    
+
     public void Jump()
     {
 
-        if(Input.GetKeyUp(KeyCode.C) && !IsGround && !IsJump)
+        if (Input.GetKeyUp(KeyCode.C) && !IsGround && !IsJump)
         {
             Debug.Log("afds");
             rb.AddForce(Vector3.up * jumpPower, ForceMode2D.Impulse);
