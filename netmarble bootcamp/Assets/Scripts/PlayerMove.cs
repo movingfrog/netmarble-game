@@ -6,14 +6,17 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float speed;
     [SerializeField]
-    private float jumpPower = 0;
+    private float jumpPower = 3;
     [SerializeField]
-    private float maxJump = 10;
+    private float plusJumpPower = 10;
+    private float jumpTime = 0;
+    private float jumpLimit = 0.1f;
 
     public LayerMask groundLayer;
 
     bool IsGround;
     bool IsJump;
+    bool IsJumping;
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,18 +25,9 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         IsGround = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
-        if (!IsGround && Input.GetKey(KeyCode.C))
-        {
-            jumpPower += 50f * Time.deltaTime;
-            Debug.Log("fds");
-        }
-        if (jumpPower >= maxJump)
-        {
-            jumpPower = maxJump;
-        }
-        if (!Input.GetKey(KeyCode.C))
-            jumpPower = 0;
+        Jump();
     }
+
 
     private void FixedUpdate()
     {
@@ -45,6 +39,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             IsJump = false;
+            jumpTime = 0;
         }
     }
 
@@ -64,4 +59,25 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void Jump()
+    {
+        if (Input.GetKeyDown(KeyCode.C) && !IsGround && !IsJump)
+        {
+            Debug.Log("점프");
+            rb.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
+            IsJumping = true;
+            IsJump = true;
+            jumpTime = 0;
+        }
+        if (IsJumping && Input.GetKey(KeyCode.C))
+        {
+            Debug.Log("점프중");
+            rb.AddForce(new Vector2(0, (jumpPower + plusJumpPower) * Time.deltaTime), ForceMode2D.Impulse);
+            jumpTime += Time.deltaTime;
+        }
+        if (Input.GetKeyUp(KeyCode.C) || jumpTime > jumpLimit)
+        {
+            IsJumping = false;
+        }
+    }
 }
