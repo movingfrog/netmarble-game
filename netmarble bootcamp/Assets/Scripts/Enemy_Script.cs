@@ -44,7 +44,7 @@ public class Example : MonoBehaviour
                 path[2] = hitCollider.transform.position;
 
                 // °æ·Î Æ®À§´×
-                transform.DOPath(path, 1f, PathType.CatmullRom).SetEase(Ease.Linear);
+                transform.DOPath(path, 0.75f, PathType.CatmullRom).SetEase(Ease.Linear);
                 StartCoroutine("Delay");
             }
         }
