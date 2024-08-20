@@ -10,8 +10,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float plusJumpPower = 10;
     private float jumpTime = 0;
-    private float jumpLimit = 0.5f;
-
+    private float jumpLimit = 0.25f;
+    float gravity;
     public LayerMask groundLayer;
 
     bool IsGround;
@@ -63,7 +63,9 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.C) && !IsGround && !IsJump)
         {
-            Debug.Log("Á¡ÇÁ");
+            gravity = rb.gravityScale;
+            rb.gravityScale = 0;
+            Debug.Log("ÃÂ¡Ã‡Ã");
             rb.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
             IsJumping = true;
             IsJump = true;
@@ -71,12 +73,13 @@ public class PlayerMove : MonoBehaviour
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {
-            Debug.Log("Á¡ÇÁÁß");
+            Debug.Log("ÃÂ¡Ã‡ÃÃÃŸ");
             rb.AddForce(new Vector2(0, (jumpPower + plusJumpPower) * Time.deltaTime), ForceMode2D.Impulse);
             jumpTime += Time.deltaTime;
         }
         if (Input.GetKeyUp(KeyCode.C) || jumpTime > jumpLimit)
         {
+            rb.gravityScale = gravity;
             IsJumping = false;
         }
     }

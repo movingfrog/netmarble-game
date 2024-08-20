@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEditor.Rendering;
 using UnityEngine;
+using DG.Tweening;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
+using static UnityEngine.GraphicsBuffer;
 
 public class Example : MonoBehaviour
 {
@@ -10,6 +13,7 @@ public class Example : MonoBehaviour
     private bool IsTarget;
     Vector2 direc;
     Rigidbody2D rb;
+    int cnt = 0;
 
     private void Awake()
     {
@@ -30,37 +34,52 @@ public class Example : MonoBehaviour
         foreach (var hitCollider in hitColliders)
         {
             IsTarget = true;
-            // 적의 현재 위치 가져오기
-            Vector3 enemyPosition = transform.position;
 
-            // 플레이어의 X좌표를 목표로 설정
-            float targetX = hitCollider.transform.position.x;
 
-            // 적이 목표 X좌표로 이동하도록 계산 (현재 위치와 목표 위치 간의 선형 보간)
-            float newX = Mathf.MoveTowards(enemyPosition.x, targetX, speed * Time.deltaTime);
+            if (transform.position.y - hitCollider.transform.position.y < 0.3f && transform.position.y - hitCollider.transform.position.y > -0.3f && cnt++ == 0)
+            {
+                Vector3[] path = new Vector3[3];
+                path[0] = transform.position;
+                path[1] = new Vector3((transform.position.x + hitCollider.transform.position.x) / 2, transform.position.y + 1f, (transform.position.z + hitCollider.transform.position.z) / 2); // 최고점
+                path[2] = hitCollider.transform.position;
 
-            // 적의 새로운 위치 설정 (X축만 변경하고 Y축과 Z축은 유지)
-            transform.position = new Vector3(newX, enemyPosition.y, enemyPosition.z);
+                // 경로 트위닝
+                transform.DOPath(path, 0.75f, PathType.CatmullRom).SetEase(Ease.Linear);
+                StartCoroutine("Delay");
+            }
         }
     }
 
     IEnumerator Idle()
     {
-        for (; !IsTarget;)
+        for (; ;)
         {
-            if (Random.Range(0, 2) == 1)
+            if (cnt == 0)
             {
-                direc = Vector2.right;
+                if (Random.Range(0, 2) == 1)
+                {
+                    direc = Vector2.right;
+                }
+                else
+                {
+                    direc = Vector2.left;
+                }
+                rb.velocity = direc;
+                yield return new WaitForSeconds(3f);
+                rb.velocity = Vector2.zero;
+                yield return new WaitForSeconds(3f);
             }
             else
             {
-                direc = Vector2.left;
+                yield return null;
             }
-            rb.velocity = direc;
-            yield return new WaitForSeconds(3f);
-            rb.velocity = Vector2.zero;
-            yield return new WaitForSeconds(3f);
         }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(3f);
+        cnt = 0;
     }
 
     // Gizmos를 이용해 Scene 뷰에 원의 범위를 시각적으로 표시
