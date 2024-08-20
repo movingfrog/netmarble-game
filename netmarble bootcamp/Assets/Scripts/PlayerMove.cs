@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float plusJumpPower = 10;
     private float jumpTime = 0;
-    private float jumpLimit = 0.1f;
+    private float jumpLimit = 0.5f;
 
     public LayerMask groundLayer;
 
