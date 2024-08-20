@@ -12,7 +12,6 @@ public class PlayerMove : MonoBehaviour
     private float jumpTime = 0;
     private float jumpLimit = 0.25f;
     float gravity;
-
     public LayerMask groundLayer;
 
     bool IsGround;
@@ -66,7 +65,7 @@ public class PlayerMove : MonoBehaviour
         {
             gravity = rb.gravityScale;
             rb.gravityScale = 0;
-            Debug.Log("¡°«¡");
+            Debug.Log("√Å¬°√á√Å");
             rb.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
             IsJumping = true;
             IsJump = true;
@@ -74,7 +73,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {
-            Debug.Log("¡°«¡¡ﬂ");
+            Debug.Log("√Å¬°√á√Å√Å√ü");
             rb.AddForce(new Vector2(0, (jumpPower + plusJumpPower) * Time.deltaTime), ForceMode2D.Impulse);
             jumpTime += Time.deltaTime;
         }
