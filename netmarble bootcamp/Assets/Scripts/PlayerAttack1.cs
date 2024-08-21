@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using UnityEngine;
 
@@ -12,6 +13,9 @@ public class PlayerAttack1 : MonoBehaviour
     private float maxWait = 5f;
     [SerializeField]
     private float wait;
+    [SerializeField]
+    private float uping = 1;
+    
 
     Rigidbody2D rb;
     bool isSkill;
@@ -28,20 +32,20 @@ public class PlayerAttack1 : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift)&&!isSkill)
         {
             Debug.Log(isSkill);
-            rushPower += 0.5f;
-            wait += 0.5f;
+            rushPower += uping * Time.deltaTime;
+            wait += uping * Time.deltaTime;
         }
         if(rushPower >= maxRushPower)
         {
             rushPower = maxRushPower;
             wait = maxWait;
         }
-        if(Input.GetKeyUp(KeyCode.RightShift)&&!isSkill)
+        if(Input.GetKeyUp(KeyCode.LeftShift)&&!isSkill)
         {
             if (h == 0)
                 h = 1;
-            skillRange.SetActive(true);
-            rb.velocity = new Vector2(rb.velocity.x + rushPower * h, 0);
+            //skillRange.SetActive(true);
+            transform.DOMoveX(transform.position.x + (transform.localScale.x > 0 ? rushPower : -rushPower), 0.1f).SetEase(Ease.OutQuad);
             rushPower = 0;
             isSkill = true;
             StartCoroutine("SkillWaiting");
@@ -52,6 +56,7 @@ public class PlayerAttack1 : MonoBehaviour
     {
         Debug.Log(isSkill);
         yield return new WaitForSeconds(wait);
+        wait = 0;
         isSkill = false;
     }
 }
