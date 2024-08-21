@@ -11,6 +11,7 @@ public class PlayerMove : MonoBehaviour
     private float plusJumpPower = 10;
     private float jumpTime = 0;
     private float jumpLimit = 0.1f;
+    private float gravity;
 
     public LayerMask groundLayer;
 
@@ -68,6 +69,8 @@ public class PlayerMove : MonoBehaviour
             IsJumping = true;
             IsJump = true;
             jumpTime = 0;
+            gravity = rb.gravityScale;
+            rb.gravityScale = 0;
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {
@@ -77,6 +80,7 @@ public class PlayerMove : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.C) || jumpTime > jumpLimit)
         {
+            rb.gravityScale = gravity;
             IsJumping = false;
         }
     }
