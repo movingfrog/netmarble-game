@@ -49,7 +49,6 @@ public class PlayerAttack1 : MonoBehaviour
                 h = 1;
             skillRange.SetActive(true);
             transform.DOMoveX(transform.position.x + (transform.localScale.x > 0 ? rushPower : -rushPower), 0.1f).SetEase(Ease.OutQuad);
-            skillRange.SetActive(true);
             rb.velocity = new Vector2(rushPower * h, 0);
             rushPower = 0;
             StartCoroutine("skillDelay");
