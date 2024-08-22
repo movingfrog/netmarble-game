@@ -34,6 +34,8 @@ public class PlayerAttack1 : MonoBehaviour
             Debug.Log(isSkill);
             rushPower += uping * Time.deltaTime;
             wait += uping * Time.deltaTime;
+            rushPower += 0.5f * Time.deltaTime;
+            wait += 0.5f * Time.deltaTime;
         }
         if(rushPower >= maxRushPower)
         {
@@ -42,14 +44,24 @@ public class PlayerAttack1 : MonoBehaviour
         }
         if(Input.GetKeyUp(KeyCode.LeftShift)&&!isSkill)
         {
+            Debug.Log("SDF");
             if (h == 0)
                 h = 1;
-            //skillRange.SetActive(true);
+            skillRange.SetActive(true);
             transform.DOMoveX(transform.position.x + (transform.localScale.x > 0 ? rushPower : -rushPower), 0.1f).SetEase(Ease.OutQuad);
+            skillRange.SetActive(true);
+            rb.velocity = new Vector2(rushPower * h, 0);
             rushPower = 0;
+            StartCoroutine("skillDelay");
             isSkill = true;
             StartCoroutine("SkillWaiting");
         }
+    }
+
+    IEnumerator skillDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        skillRange.SetActive(false);
     }
 
     IEnumerator SkillWaiting()
