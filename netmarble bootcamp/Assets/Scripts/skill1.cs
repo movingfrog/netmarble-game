@@ -15,12 +15,14 @@ public class PlayerAttack1 : MonoBehaviour
     private float wait;
     [SerializeField]
     private float uping = 1;
+    private Tween mytween;
 
-
+    Collider2D cld2D;
     Rigidbody2D rb;
     bool isSkill;
     private void Start()
     {
+        skillRange.SetActive(false);
         isSkill = false;
         rb = GetComponent<Rigidbody2D>();
     }
@@ -33,33 +35,39 @@ public class PlayerAttack1 : MonoBehaviour
         {
             Debug.Log(isSkill);
             rushPower += uping * Time.deltaTime;
-            wait += uping * Time.deltaTime;
-            rushPower += 0.5f * Time.deltaTime;
-            wait += 0.5f * Time.deltaTime;
+            wait += uping * Time.deltaTime * 1/2;
         }
         if (rushPower >= maxRushPower)
         {
             rushPower = maxRushPower;
-            wait = maxWait;
         }
+        if(wait >= maxWait)
+            wait = maxWait;
         if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill)
         {
             Debug.Log("SDF");
             if (h == 0)
                 h = 1;
             skillRange.SetActive(true);
-            transform.DOMoveX(transform.position.x + (transform.localScale.x > 0 ? rushPower : -rushPower), 0.1f).SetEase(Ease.OutQuad);
-            rb.velocity = new Vector2(rushPower * h, 0);
+            mytween = transform.DOMoveX(transform.position.x + (transform.localScale.x > 0 ? rushPower : -rushPower), 0.5f).SetEase(Ease.OutQuad);
             rushPower = 0;
             StartCoroutine("skillDelay");
-            isSkill = true;
             StartCoroutine("SkillWaiting");
+            isSkill = true;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") && isSkill)
+        {
+            mytween.Pause();
         }
     }
 
     IEnumerator skillDelay()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         skillRange.SetActive(false);
     }
 
