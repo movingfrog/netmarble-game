@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack1 : MonoBehaviour
 {
     public GameObject skillRange;
+    public GameObject stopCol;
     [SerializeField]
     private float rushPower;
     [SerializeField]
@@ -19,7 +20,7 @@ public class PlayerAttack1 : MonoBehaviour
 
     Collider2D cld2D;
     Rigidbody2D rb;
-    bool isSkill;
+    public static bool isSkill;
     private void Start()
     {
         skillRange.SetActive(false);
