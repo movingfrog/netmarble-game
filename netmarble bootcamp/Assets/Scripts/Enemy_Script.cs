@@ -26,18 +26,15 @@ public class Example : MonoBehaviour
 
     void Update()
     {
-        IsTarget = false;
         // 현재 오브젝트의 위치를 기준으로 원을 그려서 충돌을 감지
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
 
         // 감지된 콜라이더들을 순회하며 작업 수행
         foreach (var hitCollider in hitColliders)
         {
-            IsTarget = true;
-
-
             if (transform.position.y - hitCollider.transform.position.y < 0.3f && transform.position.y - hitCollider.transform.position.y > -0.3f && cnt++ == 0)
             {
+                IsTarget = true;
                 Vector3[] path = new Vector3[3];
                 path[0] = transform.position;
                 path[1] = new Vector3((transform.position.x + hitCollider.transform.position.x) / 2, transform.position.y + 1f, (transform.position.z + hitCollider.transform.position.z) / 2); // 최고점
@@ -54,7 +51,7 @@ public class Example : MonoBehaviour
     {
         for (; ;)
         {
-            if (cnt == 0)
+            if (IsTarget == false)
             {
                 if (Random.Range(0, 2) == 1)
                 {
@@ -78,6 +75,7 @@ public class Example : MonoBehaviour
 
     IEnumerator Delay()
     {
+        IsTarget = false;
         yield return new WaitForSeconds(3f);
         cnt = 0;
     }
