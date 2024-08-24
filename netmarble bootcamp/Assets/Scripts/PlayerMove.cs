@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     private float jumpTime = 0;
     private float jumpLimit = 0.25f;
     float gravity;
+    public GameObject effect;
 
     public LayerMask groundLayer;
 
@@ -71,6 +72,7 @@ public class PlayerMove : MonoBehaviour
             IsJumping = true;
             IsJump = true;
             jumpTime = 0;
+            Instantiate(effect, transform.position, transform.rotation);
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {
