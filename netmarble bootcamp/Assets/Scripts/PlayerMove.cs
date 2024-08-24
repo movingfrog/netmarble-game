@@ -50,10 +50,12 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            transform.localScale = new Vector2(1, 1);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            transform.localScale = new Vector2(-1, 1);
         }
         else
         {
