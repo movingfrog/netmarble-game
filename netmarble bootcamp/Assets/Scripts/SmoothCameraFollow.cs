@@ -1,17 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SmoothCameraFollow : MonoBehaviour
 {
-    public float cameraSpeed = 5.0f;
-    public float CameraYPos;
-    public GameObject player;
+    [SerializeField]
+    Transform playerTransform;
+    [SerializeField]
+    Vector3 cameraPosition;
 
-    private void Update()
+    [SerializeField]
+    Vector2 center;
+    [SerializeField]
+    Vector2 mapSize;
+
+    [SerializeField]
+    float cameraMoveSpeed;
+    float height;
+    float width;
+
+    void Start()
     {
-        Vector3 dir = player.transform.position - this.transform.position;
-        Vector3 moveVector = new Vector2(dir.x * cameraSpeed * Time.deltaTime, (dir.y+CameraYPos) * cameraSpeed * Time.deltaTime);
-        this.transform.Translate(moveVector);
+        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+
+        height = Camera.main.orthographicSize;
+        width = height * Screen.width / Screen.height;
+    }
+
+    void FixedUpdate()
+    {
+        if (!npc1.talking)
+            LimitCameraArea();
+    }
+
+    void LimitCameraArea()
+    {
+        transform.position = Vector3.Lerp(transform.position,
+                                          playerTransform.position + cameraPosition,
+                                          Time.deltaTime * cameraMoveSpeed);
+        float lx = mapSize.x - width;
+        float clampX = Mathf.Clamp(transform.position.x, -lx + center.x, lx + center.x);
+
+        float ly = mapSize.y - height;
+        float clampY = Mathf.Clamp(transform.position.y, -ly + center.y, ly + center.y);
+
+        transform.position = new Vector3(clampX, clampY, -10f);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(center, mapSize * 2);
     }
 }
