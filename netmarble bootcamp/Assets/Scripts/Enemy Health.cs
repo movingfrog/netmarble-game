@@ -37,5 +37,10 @@ public class EnemyHealth : MonoBehaviour
     {
         healthSlider.value = curHealth / maxHealth;
         UI.position = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z));
+        if (curHealth <= 0)
+        {
+            Destroy(visualSlider);
+            Destroy(gameObject);
+        }
     }
 }
