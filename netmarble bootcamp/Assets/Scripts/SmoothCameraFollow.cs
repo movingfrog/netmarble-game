@@ -27,7 +27,7 @@ public class SmoothCameraFollow : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!npc1.talking)
+        if (!npc1.talking && !npc2.talking)
             LimitCameraArea();
     }
 
