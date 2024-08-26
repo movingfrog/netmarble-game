@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    Animator ani;
     Rigidbody2D rb;
     [SerializeField]
-    private float speed = 10f;
+    private float speed;
     [SerializeField]
     private float jumpPower = 3;
     [SerializeField]
@@ -22,7 +21,6 @@ public class PlayerMove : MonoBehaviour
     bool IsJumping;
     private void Start()
     {
-        ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -45,7 +43,6 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             IsJump = false;
-            ani.SetBool("isJump", false);
             jumpTime = 0;
         }
     }
@@ -56,17 +53,14 @@ public class PlayerMove : MonoBehaviour
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
-            ani.SetBool("isRun", true);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
-            ani.SetBool("isRun", true);
             transform.localScale = new Vector2(-1, 1);
         }
         else
         {
-            ani.SetBool("isRun", false);
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
@@ -77,16 +71,16 @@ public class PlayerMove : MonoBehaviour
         {
             gravity = rb.gravityScale;
             rb.gravityScale = 0;
-            Debug.Log("ÃÂ¡Ã‡Ã");
+            Debug.Log("Á¡ÇÁ");
             rb.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
             IsJumping = true;
             IsJump = true;
             jumpTime = 0;
-            ani.SetBool("isJump", true);
+            Instantiate(effect, transform.position, transform.rotation);
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {
-            Debug.Log("ÃÂ¡Ã‡ÃÃÃŸ");
+            Debug.Log("Á¡ÇÁÁß");
             rb.AddForce(new Vector2(0, (jumpPower + plusJumpPower) * Time.deltaTime), ForceMode2D.Impulse);
             jumpTime += Time.deltaTime;
         }

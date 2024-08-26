@@ -6,15 +6,15 @@ public class PlayerAttack2 : MonoBehaviour
     public float skilldelay = 5f;
     public float range = 3f;
 
-    public static bool isSkill1;
+    public bool isSkill;
 
     private void Update()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, range);
-        if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime == 0)
+        if (Input.GetKeyDown(KeyCode.V) && !isSkill)
         {
-            isSkill1 = true;
-            Debug.Log(isSkill1);
+            isSkill = true;
+            Debug.Log(isSkill);
             foreach (Collider2D collider in colliders)
             {
                 if (collider.gameObject.CompareTag("Enemy"))
@@ -30,9 +30,9 @@ public class PlayerAttack2 : MonoBehaviour
 
     IEnumerator SkillWaiting()
     {
-        Debug.Log(isSkill1);
+        Debug.Log(isSkill);
         yield return new WaitForSeconds(skilldelay);
-        isSkill1 = false;
+        isSkill = false;
     }
 
     private void OnDrawGizmos()
