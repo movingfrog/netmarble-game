@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class defaultAttack : MonoBehaviour
 {
-    public static float curtime;
+    private float curtime;
     public float cooltime = 0.5f;
     EnemyHealth Damage; 
 
-    public Vector2 boxSize = new Vector2(2,2);
+    public Vector2 boxSize;
 
     private void Update()
     {
@@ -25,16 +25,6 @@ public class defaultAttack : MonoBehaviour
                         Debug.Log("¶§·È´Ù!");
                         Damage = colliders.GetComponent<EnemyHealth>();
                         Damage.curHealth -= 20f;
-                    }
-                }
-                if (Input.GetKeyDown(KeyCode.X))
-                {
-                    foreach (Collider2D colliders in collider)
-                    {
-                        if (colliders.gameObject.CompareTag("Enemy"))
-                        {
-                            Debug.Log("¶§·È´Ù!");
-                        }
                     }
                 }
                 curtime = cooltime;
