@@ -6,16 +6,24 @@ public class defaultAttack : MonoBehaviour
 {
     public static float curtime;
     public float cooltime = 0.5f;
-    EnemyHealth Damage; 
+    EnemyHealth Damage;
+    Animator ani;
 
     public Vector2 boxSize = new Vector2(2,2);
 
+    private void Awake()
+    {
+        ani = GetComponent<Animator>();
+    }
+
     private void Update()
     {
-        if (curtime <= 0)
+        if (curtime <= 0) //평타 쿨타임
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
+                ani.SetBool("BaseAttack", true);
+                ani.SetTrigger("BaseAttack1");
                 Collider2D[] collider = Physics2D.OverlapBoxAll(new Vector2(transform.position.x + boxSize.x / 2 * (transform.localScale.x >= 0 ? 1 : -1), transform.position.y), boxSize, 0);
 
                 foreach (Collider2D colliders in collider)
@@ -29,6 +37,7 @@ public class defaultAttack : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.X))
                 {
+                    ani.SetTrigger("BaseAttack2");
                     foreach (Collider2D colliders in collider)
                     {
                         if (colliders.gameObject.CompareTag("Enemy"))
@@ -37,11 +46,14 @@ public class defaultAttack : MonoBehaviour
                         }
                     }
                 }
+                ani.SetBool("BaseAttack", false);
                 curtime = cooltime;
             }
         }
-        else
-            curtime -= Time.deltaTime;
+        else //평타 쿨타임 감소
+        { 
+            curtime -= Time.deltaTime; 
+        }
     }
 
     private void OnDrawGizmos()
