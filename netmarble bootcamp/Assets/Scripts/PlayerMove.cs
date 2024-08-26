@@ -41,7 +41,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             IsJump = false;
-            ani.SetBool("IsJump", false);
+            ani.SetBool("isJump", false);
             jumpTime = 0;
         }
     }
@@ -78,7 +78,7 @@ public class PlayerMove : MonoBehaviour
             IsJumping = true;
             IsJump = true;
             jumpTime = 0;
-            ani.SetBool("IsJump", true);
+            ani.SetBool("isJump", true);
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {

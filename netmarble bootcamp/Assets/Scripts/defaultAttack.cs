@@ -11,7 +11,7 @@ public class defaultAttack : MonoBehaviour
 
     private void Update()
     {
-        if (curtime <= 0 && !PlayerAttack1.isSkill2&&!PlayerAttack2.isSkill1)
+        if (curtime <= 0)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {

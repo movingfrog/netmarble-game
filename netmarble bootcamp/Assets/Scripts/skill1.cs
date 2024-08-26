@@ -34,11 +34,11 @@ public class PlayerAttack1 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 && !PlayerAttack2.isSkill1&&defaultAttack.curtime == 0)
+        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime == 0)
         {
             if (!boolsoneshot)
             {
-                ani.SetBool("isChrag", true);
+                ani.SetTrigger("isChrag");
                 boolsoneshot = true;
             }
             else
@@ -64,7 +64,6 @@ public class PlayerAttack1 : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2)
         {
             boolsoneshot = false;
-            ani.SetTrigger("isAttack");
             Debug.Log("SDF");
             skillRange.SetActive(true);
             ani.SetTrigger("isAttack");
@@ -89,6 +88,9 @@ public class PlayerAttack1 : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         gameObject.layer = 3;
+        ani.ResetTrigger("isAttack");
+        ani.ResetTrigger("isChrag");
+        ani.ResetTrigger("isChraging");
         Effect.SetActive(false);
         skillRange.SetActive(false);
         isEndChraging = false;

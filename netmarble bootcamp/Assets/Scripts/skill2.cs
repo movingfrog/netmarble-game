@@ -11,7 +11,7 @@ public class PlayerAttack2 : MonoBehaviour
     private void Update()
     {
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, range);
-        if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && !PlayerAttack1.isSkill2 && defaultAttack.curtime == 0)
+        if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime == 0)
         {
             isSkill1 = true;
             Debug.Log(isSkill1);
