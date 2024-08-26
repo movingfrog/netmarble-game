@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5fe72fda72604894a97a707df4b38661
+guid: 16ac1516863ddc34c85f3b808d0f5ee1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,169 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player-Run_0
+      name: Effect-Sheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 2
+        y: 8
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee0e1605f2b9b7043a0912087a908df1
-      internalID: -1923400535
+      spriteID: 7fe9d7efcb4dfcc45a7bd297399db9a2
+      internalID: 592786437
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Run_1
+      name: Effect-Sheet_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 66
+        y: 8
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e98abb0e02656d45840f08d95d250c6
-      internalID: 1731073844
+      spriteID: 464316bc996f45147a4691d7b6cf16b8
+      internalID: 343046365
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Run_2
+      name: Effect-Sheet_2
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 127
+        y: 8
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 659cd97b52623e34dbf593ade328335b
-      internalID: 1022096932
+      spriteID: d73392345d295db4da9726f39ab236d2
+      internalID: 1515634516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Run_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7362f8436c87dde41912a4c6d8703d58
-      internalID: -1092851371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player-Run_4
+      name: Effect-Sheet_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 8
         width: 48
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e8355ee3949c6a4fa1f2debe48f6c7d
-      internalID: -1650108932
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player-Run_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5839726703ee18444941d775b88bc2be
-      internalID: 234582174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player-Run_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddf7d927a72ff50459c8a78691e811c8
-      internalID: 1286711891
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player-Run_7
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f347a5e330673204bbccb6e1fec59150
-      internalID: -1926774880
+      spriteID: 5ed8f622c2eff2849a80757f076c8b5e
+      internalID: 1613685488
       vertices: []
       indices: 
       edges: []
@@ -288,14 +204,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player-Run_0: -1923400535
-      Player-Run_1: 1731073844
-      Player-Run_2: 1022096932
-      Player-Run_3: -1092851371
-      Player-Run_4: -1650108932
-      Player-Run_5: 234582174
-      Player-Run_6: 1286711891
-      Player-Run_7: -1926774880
+      Effect-Sheet_0: 592786437
+      Effect-Sheet_1: 343046365
+      Effect-Sheet_2: 1515634516
+      Effect-Sheet_3: 1613685488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

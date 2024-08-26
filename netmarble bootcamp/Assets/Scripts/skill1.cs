@@ -5,78 +5,100 @@ using UnityEngine;
 public class PlayerAttack1 : MonoBehaviour
 {
     public GameObject skillRange;
-    public GameObject stopCol;
+    public GameObject Effect;
     [SerializeField]
     private float rushPower;
     [SerializeField]
-    private float maxRushPower = 4;
+    private float maxRushPower = 10;
     [SerializeField]
     private float maxWait = 5f;
     [SerializeField]
     private float wait;
     [SerializeField]
-    private float uping = 1;
-    private Tween mytween;
+    private float uping = 5f;
+    Animator ani;
+    Tween mytween;
+    bool isEndChraging;
+    bool boolsoneshot;
 
-    Collider2D cld2D;
-    Rigidbody2D rb;
-    public static bool isSkill;
+    public static bool isSkill2;
     private void Start()
     {
+        ani = GetComponent<Animator>();
         skillRange.SetActive(false);
-        isSkill = false;
-        rb = GetComponent<Rigidbody2D>();
+        isSkill2 = false;
+        isEndChraging = false;
+        boolsoneshot = false;
+        Effect.SetActive(false);
     }
 
     private void Update()
     {
-        float h = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetKey(KeyCode.LeftShift) && !isSkill)
+        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 && !PlayerAttack2.isSkill1&&defaultAttack.curtime == 0)
         {
-            Debug.Log(isSkill);
+            if (!boolsoneshot)
+            {
+                ani.SetBool("isChrag", true);
+                boolsoneshot = true;
+            }
+            else
+            {
+                ani.SetTrigger("isChraging");
+            }
+            Debug.Log(isSkill2);
+            gameObject.layer = 9;
             rushPower += uping * Time.deltaTime;
             wait += uping * Time.deltaTime * 1/2;
         }
         if (rushPower >= maxRushPower)
         {
             rushPower = maxRushPower;
+            if (!isEndChraging)
+            {
+                Effect.SetActive(true);
+                isEndChraging=true;
+            }
         }
         if(wait >= maxWait)
             wait = maxWait;
-        if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill)
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2)
         {
+            boolsoneshot = false;
+            ani.SetTrigger("isAttack");
             Debug.Log("SDF");
-            if (h == 0)
-                h = 1;
             skillRange.SetActive(true);
+            ani.SetTrigger("isAttack");
             mytween = transform.DOMoveX(transform.position.x + (transform.localScale.x > 0 ? rushPower : -rushPower), 0.5f).SetEase(Ease.OutQuad);
             rushPower = 0;
             StartCoroutine("skillDelay");
             StartCoroutine("SkillWaiting");
-            isSkill = true;
+            isSkill2 = true;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && isSkill)
+        if (collision.gameObject.CompareTag("Enemy") && isSkill2)
         {
             mytween.Pause();
+            gameObject.layer = 3;
         }
     }
 
     IEnumerator skillDelay()
     {
         yield return new WaitForSeconds(0.5f);
+        gameObject.layer = 3;
+        Effect.SetActive(false);
         skillRange.SetActive(false);
+        isEndChraging = false;
     }
 
     IEnumerator SkillWaiting()
     {
-        Debug.Log(isSkill);
+        Debug.Log(isSkill2);
         yield return new WaitForSeconds(wait);
         wait = 0;
-        isSkill = false;
+        isSkill2 = false;
     }
 }

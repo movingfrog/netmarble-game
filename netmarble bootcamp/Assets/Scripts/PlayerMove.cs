@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    Animator ani;
     Rigidbody2D rb;
     [SerializeField]
-    private float speed;
+    private float speed = 10f;
     [SerializeField]
-    private float jumpPower = 3;
+    private float jumpPower = 4;
     [SerializeField]
-    private float plusJumpPower = 10;
+    private float plusJumpPower = 4;
     private float jumpTime = 0;
     private float jumpLimit = 0.25f;
     float gravity;
@@ -19,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     bool IsJumping;
     private void Start()
     {
+        ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -39,6 +41,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             IsJump = false;
+            ani.SetBool("IsJump", false);
             jumpTime = 0;
         }
     }
@@ -49,14 +52,17 @@ public class PlayerMove : MonoBehaviour
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
             transform.localScale = new Vector2(1, 1);
+            ani.SetBool("isRun", true);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            ani.SetBool("isRun", true);
             transform.localScale = new Vector2(-1, 1);
         }
         else
         {
+            ani.SetBool("isRun", false);
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
@@ -72,6 +78,7 @@ public class PlayerMove : MonoBehaviour
             IsJumping = true;
             IsJump = true;
             jumpTime = 0;
+            ani.SetBool("IsJump", true);
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {

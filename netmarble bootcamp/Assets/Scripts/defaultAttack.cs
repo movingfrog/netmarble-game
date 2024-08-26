@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class defaultAttack : MonoBehaviour
 {
-    private float curtime;
+    public static float curtime;
     public float cooltime = 0.5f;
 
-    public Vector2 boxSize;
+    public Vector2 boxSize = new Vector2(2,2);
 
     private void Update()
     {
-        if (curtime <= 0)
+        if (curtime <= 0 && !PlayerAttack1.isSkill2&&!PlayerAttack2.isSkill1)
         {
             if (Input.GetKeyDown(KeyCode.X))
             {
@@ -22,6 +22,16 @@ public class defaultAttack : MonoBehaviour
                     if (colliders.gameObject.CompareTag("Enemy"))
                     {
                         Debug.Log("¶§·È´Ù!");
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.X))
+                {
+                    foreach (Collider2D colliders in collider)
+                    {
+                        if (colliders.gameObject.CompareTag("Enemy"))
+                        {
+                            Debug.Log("¶§·È´Ù!");
+                        }
                     }
                 }
                 curtime = cooltime;
