@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
     private float jumpTime = 0;
     private float jumpLimit = 0.25f;
     float gravity;
+    public GameObject effect;
+
     public LayerMask groundLayer;
 
     bool IsGround;
@@ -27,13 +29,15 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         IsGround = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
-        Jump();
+        if (!npc1.talking && !npc2.talking)
+            Jump();
     }
 
 
     private void FixedUpdate()
     {
-        Move();
+        if (!npc1.talking && !npc2.talking)
+            Move();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

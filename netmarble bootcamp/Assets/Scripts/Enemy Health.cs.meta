@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: a3d1a3f262995394a97a79dd3c008418
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - slider: {fileID: 4694185246576812481, guid: 0f04807afa3999347b4cfe7f872d881b, type: 3}
+  - healthSlider: {fileID: 5598279305545464832, guid: 0f04807afa3999347b4cfe7f872d881b, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
