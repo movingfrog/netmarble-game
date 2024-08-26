@@ -1596,9 +1596,10 @@ GameObject:
   - component: {fileID: 1205877362}
   - component: {fileID: 1205877361}
   - component: {fileID: 1205877360}
+  - component: {fileID: 1205877365}
   m_Layer: 6
-  m_Name: enemy
-  m_TagString: Untagged
+  m_Name: Rush Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1759,6 +1760,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1205877365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205877359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d1a3f262995394a97a79dd3c008418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  maxHealth: 0
+  slider: {fileID: 4694185246576812481, guid: 0f04807afa3999347b4cfe7f872d881b, type: 3}
+  canvas: {fileID: 590960479}
 --- !u!1 &1282855752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1789,7 @@ GameObject:
   - component: {fileID: 1282855754}
   - component: {fileID: 1282855753}
   - component: {fileID: 1282855757}
+  - component: {fileID: 1282855758}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1927,6 +1945,20 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1282855758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282855752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70deb170cbc21dc48bee48ba7a9839fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooltime: 0.5
+  boxSize: {x: 2, y: 2}
 --- !u!1 &1375925431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,9 +2193,10 @@ GameObject:
   - component: {fileID: 1471754079}
   - component: {fileID: 1471754078}
   - component: {fileID: 1471754082}
+  - component: {fileID: 1471754083}
   m_Layer: 6
-  m_Name: enemy (1)
-  m_TagString: Untagged
+  m_Name: Gun Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2326,6 +2359,22 @@ MonoBehaviour:
     m_Bits: 8
   speed: 4
   bullet: {fileID: 1257897628773068414, guid: cd813916abd4eff40af1f297d565bfaf, type: 3}
+--- !u!114 &1471754083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471754076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3d1a3f262995394a97a79dd3c008418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curHealth: 0
+  maxHealth: 0
+  slider: {fileID: 4694185246576812481, guid: 0f04807afa3999347b4cfe7f872d881b, type: 3}
+  canvas: {fileID: 590960479}
 --- !u!1 &1559129507
 GameObject:
   m_ObjectHideFlags: 0

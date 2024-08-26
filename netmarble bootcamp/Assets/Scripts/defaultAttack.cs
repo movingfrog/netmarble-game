@@ -6,6 +6,7 @@ public class defaultAttack : MonoBehaviour
 {
     private float curtime;
     public float cooltime = 0.5f;
+    EnemyHealth Damage; 
 
     public Vector2 boxSize;
 
@@ -22,6 +23,8 @@ public class defaultAttack : MonoBehaviour
                     if (colliders.gameObject.CompareTag("Enemy"))
                     {
                         Debug.Log("¶§·È´Ù!");
+                        Damage = colliders.GetComponent<EnemyHealth>();
+                        Damage.curHealth -= 20f;
                     }
                 }
                 curtime = cooltime;
