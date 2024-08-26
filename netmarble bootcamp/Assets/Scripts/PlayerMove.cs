@@ -7,9 +7,9 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     private float speed = 10f;
     [SerializeField]
-    private float jumpPower = 4;
+    private float jumpPower = 3;
     [SerializeField]
-    private float plusJumpPower = 4;
+    private float plusJumpPower = 10;
     private float jumpTime = 0;
     private float jumpLimit = 0.25f;
     float gravity;
