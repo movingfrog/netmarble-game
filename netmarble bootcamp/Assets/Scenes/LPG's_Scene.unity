@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 1064180134}
   - component: {fileID: 1064180141}
   m_Layer: 3
-  m_Name: 9-Sliced (1)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillRange: {fileID: 1125557506}
+  stopCol: {fileID: 304902749}
   rushPower: 0
   maxRushPower: 10
   maxWait: 5
@@ -819,6 +820,7 @@ GameObject:
   - component: {fileID: 1632515713}
   - component: {fileID: 1632515712}
   - component: {fileID: 1632515715}
+  - component: {fileID: 1632515716}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -944,6 +946,23 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1632515716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632515711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ecee434fd8e3764b9f9992e7068d072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1064180140}
+  cameraPosition: {x: 0, y: 2.5, z: 0}
+  center: {x: 0, y: 0}
+  mapSize: {x: 0, y: 0}
+  cameraMoveSpeed: 2.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
