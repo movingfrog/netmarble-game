@@ -9,7 +9,7 @@ public class npc1 : MonoBehaviour
     public GameObject button;
     RectTransform UI;
     public static bool talking = false;
-    Camera mainCamera;
+    public static Camera mainCamera;
     public LayerMask layerMask;
     Vector3 npcPosition;
     public GameObject panel;
@@ -44,8 +44,8 @@ public class npc1 : MonoBehaviour
     public void text()
     {
         talking = true;
-        mainCamera.transform.DOMove(npcPosition, 0.5f);
-        DOTween.To(() => mainCamera.orthographicSize, x => mainCamera.orthographicSize = x, 3f, 0.5f);
+        mainCamera.transform.DOMove(npcPosition, 1f);
+        DOTween.To(() => mainCamera.orthographicSize, x => mainCamera.orthographicSize = x, 3f, 1f).SetEase(Ease.OutSine);
         panel.SetActive(true);
     }
 
