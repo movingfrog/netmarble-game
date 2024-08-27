@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
         }
         else if (GetComponent<Example1>() != null)
         {
-            maxHealth = 250f;
+            maxHealth = 200f;
             curHealth = maxHealth;
         }
         healthSlider = visualSlider.GetComponent<Slider>();
