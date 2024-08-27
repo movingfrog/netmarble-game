@@ -5,6 +5,7 @@ using UnityEngine;
 public class defaultAttack : MonoBehaviour
 {
     public static float curtime;
+    public static bool isAttack;
     public float cooltime = 0.5f;
     EnemyHealth Damage;
     Animator ani;
@@ -20,10 +21,19 @@ public class defaultAttack : MonoBehaviour
     {
         if (curtime <= 0) //ÆòÅ¸ ÄðÅ¸ÀÓ
         {
+            isAttack = false;
             if (Input.GetKeyDown(KeyCode.X))
             {
-                ani.SetBool("BaseAttack", true);
-                ani.SetTrigger("BaseAttack1");
+                isAttack = true;
+                int cri = Random.Range(0, 4);
+                if(cri == 0)
+                {
+                    ani.SetTrigger("BaseAttack2");
+                }
+                else
+                {
+                    ani.SetTrigger("BaseAttack1");
+                }
                 Collider2D[] collider = Physics2D.OverlapBoxAll(new Vector2(transform.position.x + boxSize.x / 2 * (transform.localScale.x >= 0 ? 1 : -1), transform.position.y), boxSize, 0);
 
                 foreach (Collider2D colliders in collider)
@@ -32,21 +42,13 @@ public class defaultAttack : MonoBehaviour
                     {
                         Debug.Log("¶§·È´Ù!");
                         Damage = colliders.GetComponent<EnemyHealth>();
+                        if (cri == 0)
+                        {
+                            Damage.curHealth -= 10;
+                        }
                         Damage.curHealth -= 20f;
                     }
                 }
-                if (Input.GetKeyDown(KeyCode.X))
-                {
-                    ani.SetTrigger("BaseAttack2");
-                    foreach (Collider2D colliders in collider)
-                    {
-                        if (colliders.gameObject.CompareTag("Enemy"))
-                        {
-                            Debug.Log("¶§·È´Ù!");
-                        }
-                    }
-                }
-                ani.SetBool("BaseAttack", false);
                 curtime = cooltime;
             }
         }

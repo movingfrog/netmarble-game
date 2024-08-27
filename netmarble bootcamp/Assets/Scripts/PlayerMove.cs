@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
     Rigidbody2D rb;
     [SerializeField]
     private float speed = 10f;
+    private float Speed;
     [SerializeField]
     private float jumpPower = 3;
     [SerializeField]
@@ -23,6 +24,7 @@ public class PlayerMove : MonoBehaviour
     public static bool isSkill;
     private void Start()
     {
+        Speed = speed;
         ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -49,6 +51,14 @@ public class PlayerMove : MonoBehaviour
 
     public void Move()
     {
+        if (!defaultAttack.isAttack)
+        {
+            speed = Speed;
+        }
+        else
+        {
+            speed = Speed / 2;
+        }
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
