@@ -2920,10 +2920,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 242338234899232682, guid: ae4fc68c3d20e7b4bb9d67f4088b0bbf, type: 3}
+      propertyPath: layerMask.m_Bits
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1341951244464012889, guid: ae4fc68c3d20e7b4bb9d67f4088b0bbf, type: 3}
       propertyPath: canvas
       value: 
-      objectReference: {fileID: 6796511460489411807, guid: 21af312d3a2d4fb4ea192c48fa995d9b, type: 3}
+      objectReference: {fileID: 1498902025}
     - target: {fileID: 2647073676409500910, guid: ae4fc68c3d20e7b4bb9d67f4088b0bbf, type: 3}
       propertyPath: m_Name
       value: Rush Enemy
@@ -3509,6 +3513,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5513205539588214886, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 1930836706}
     - target: {fileID: 86251409734312881, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
       propertyPath: m_Name
       value: Player
@@ -19719,6 +19727,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1393728714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498902025 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6796511460489411807, guid: 21af312d3a2d4fb4ea192c48fa995d9b, type: 3}
+  m_PrefabInstance: {fileID: 1930836705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1521176063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51321,6 +51334,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21af312d3a2d4fb4ea192c48fa995d9b, type: 3}
+--- !u!1 &1930836706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7526770643412650179, guid: 21af312d3a2d4fb4ea192c48fa995d9b, type: 3}
+  m_PrefabInstance: {fileID: 1930836705}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1931511036
 PrefabInstance:
   m_ObjectHideFlags: 0

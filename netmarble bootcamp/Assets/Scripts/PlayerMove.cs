@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
     private float jumpLimit = 0.25f;
     float gravity;
     public GameObject effect;
+    GameObject saveEffect;
 
     public LayerMask groundLayer;
 
@@ -84,12 +85,14 @@ public class PlayerMove : MonoBehaviour
         {
             gravity = rb.gravityScale;
             rb.gravityScale = 0;
+            saveEffect = Instantiate(effect);
             Debug.Log("Á¡ÇÁ");
             rb.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
             IsJumping = true;
             IsJump = true;
             jumpTime = 0;
             ani.SetBool("isJump", true);
+            Destroy(saveEffect, 0.4f);
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {

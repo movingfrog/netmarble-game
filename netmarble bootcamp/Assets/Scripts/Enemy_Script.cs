@@ -40,8 +40,10 @@ public class Example : MonoBehaviour
         // 감지된 콜라이더들을 순회하며 작업 수행
         foreach (var hitCollider in hitColliders)
         {
-            if (transform.position.y - hitCollider.transform.position.y < 0.3f && transform.position.y - hitCollider.transform.position.y > -0.3f && cnt++ == 0)
+            Debug.Log("asdf");
+            if (transform.position.y + 0.5f - hitCollider.transform.position.y < 0.3f && transform.position.y + 0.5f - hitCollider.transform.position.y > -0.3f && cnt++ == 0)
             {
+                Debug.Log("fewa");
                 IsTarget = true;
                 Vector3[] path = new Vector3[3];
                 path[0] = transform.position;
