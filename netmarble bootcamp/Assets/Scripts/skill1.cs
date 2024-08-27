@@ -49,6 +49,7 @@ public class PlayerAttack1 : MonoBehaviour
             }
             Debug.Log(isSkill2);
             gameObject.layer = 9;
+            //데미지 점점 증가 코드 예: damage += uping * uping * Time.deltaTime;
             rushPower += uping * Time.deltaTime;
             wait += uping * Time.deltaTime * 1/2;
         }
