@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - slider: {fileID: 4694185246576812481, guid: 0f04807afa3999347b4cfe7f872d881b, type: 3}
-  - healthSlider: {fileID: 5598279305545464832, guid: 0f04807afa3999347b4cfe7f872d881b, type: 3}
+  - canvas: {fileID: 6796511460489411807, guid: 21af312d3a2d4fb4ea192c48fa995d9b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
