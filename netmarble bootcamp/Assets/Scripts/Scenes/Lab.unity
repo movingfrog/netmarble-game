@@ -2405,7 +2405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517d767ef1da2a348810240a5c7b9497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1110242998}
+  playerTransform: {fileID: 0}
   cameraPosition: {x: 0, y: 2.5, z: 0}
   center: {x: 45, y: 0}
   mapSize: {x: 55, y: 15}
@@ -3562,7 +3562,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2500294402666228522, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
@@ -4063,11 +4064,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1393728714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1110242998 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2835936725215103332, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
-  m_PrefabInstance: {fileID: 896800477}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1156715598
 PrefabInstance:
   m_ObjectHideFlags: 0
