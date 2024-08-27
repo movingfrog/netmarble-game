@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     bool IsGround;
     bool IsJump;
     bool IsJumping;
+    public static bool isSkill;
     private void Start()
     {
         ani = GetComponent<Animator>();
@@ -36,7 +37,7 @@ public class PlayerMove : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!npc1.talking && !npc2.talking)
+        if (!npc1.talking && !npc2.talking && !isSkill)
             Move();
     }
 
