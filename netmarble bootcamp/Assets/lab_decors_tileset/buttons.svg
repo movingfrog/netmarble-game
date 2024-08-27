@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 384 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<clipPath id="button_shines_clip">
+			<use xlink:href="#button_top_plane"/>
+		</clipPath>
+	</defs>
+	<g id="button_1" transform="translate(0)">
+		<ellipse fill="#4e574f" rx="48.4" ry="36.4" cx="-11.6" cy="95.6" transform="rotate(-44.34)"/>
+		<ellipse fill="#9b0303" rx="37.5" ry="38" cx="64" cy="68"/>
+		<ellipse fill="#f07575" rx="37.5" ry="38" cx="65" cy="60"/>
+		<ellipse fill="#ff1616" rx="37.5" ry="38" cx="64" cy="62"/>
+	</g>
+	<g id="button_2" transform="translate(128)">
+		<g id="button_square_base">
+			<rect fill="#4e574f" x="17.5" y="17.5" width="93" height="93" rx="6"/>
+			<rect fill="#9b0303" x="24" y="24.8" width="80" height="78.4" rx="5"/>
+			<rect fill="#f07777" x="29" y="24.8" width="75" height="75" rx="5"/>
+			<rect id="button_top_plane" fill="#ff1616" x="29" y="26.3" width="73.5" height="73.5" rx="4"/>
+		</g>
+	</g>
+	<g id="button_3" transform="translate(256)">
+		<use xlink:href="#button_square_base"/>
+		<g clip-path="url(#button_shines_clip)">
+			<rect fill="#ffa0a0" y="-50" width="1.65" height="100" transform="translate(85, 77) rotate(29)"/>
+			<rect fill="#ffa0a0" x="-5" y="-35" width="10" height="70" transform="translate(93, 90) rotate(29)"/>
+		</g>
+	</g>
+</svg>

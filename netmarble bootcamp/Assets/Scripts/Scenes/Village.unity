@@ -565,6 +565,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114330653607159918, guid: 14137c8e282545f4b81fc929c729a368, type: 3}
+      propertyPath: speed.z
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 212011607774408294, guid: 14137c8e282545f4b81fc929c729a368, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -1994,9 +1998,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 313dc705cceec9e4782e7931c34350f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 7
-  CameraYPos: 1
-  player: {fileID: 1297643839}
+  playerTransform: {fileID: 1297643843}
+  cameraPosition: {x: 0, y: 2.5, z: 0}
+  center: {x: 49.9, y: 0.23}
+  mapSize: {x: 61.3, y: 8.74}
+  cameraMoveSpeed: 2
 --- !u!1001 &1265970202
 PrefabInstance:
   m_ObjectHideFlags: 0
