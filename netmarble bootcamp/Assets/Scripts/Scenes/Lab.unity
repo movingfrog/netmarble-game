@@ -1147,6 +1147,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1393728714}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &483106079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 496018549521472234, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
+  m_PrefabInstance: {fileID: 896800477}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &483106080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483106079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65eb803a75ed27345a92fdcc9e420833, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1930836706}
 --- !u!4 &483590035 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8816330062656998002, guid: 5f2e51d62d01ff94baf3a1d4a20ecb1d, type: 3}
@@ -2407,8 +2425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   cameraPosition: {x: 0, y: 2.5, z: 0}
-  center: {x: 45, y: 0}
-  mapSize: {x: 55, y: 15}
+  center: {x: 44, y: 0}
+  mapSize: {x: 54, y: 15}
   cameraMoveSpeed: 2.5
 --- !u!1 &713929271
 GameObject:
@@ -3565,7 +3583,10 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 2500294402666228522, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 496018549521472234, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 483106080}
   m_SourcePrefab: {fileID: 100100000, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
 --- !u!1001 &897333255
 PrefabInstance:
