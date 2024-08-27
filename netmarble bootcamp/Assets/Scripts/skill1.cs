@@ -36,6 +36,7 @@ public class PlayerAttack1 : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime <= 0)
         {
+
             if (!boolsoneshot)
             {
                 ani.SetTrigger("isChrag");

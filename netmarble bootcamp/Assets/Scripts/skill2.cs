@@ -23,10 +23,12 @@ public class PlayerAttack2 : MonoBehaviour
         {
             Invoke("cooltime", 0.4f);
             effect = false;
+            PlayerMove.isSkill = false;
         }
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, range);
         if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime <= 0)
         {
+            PlayerMove.isSkill = true;
             ani.SetTrigger("Skill2Attack");
             Invoke("coolTime", 0.6f);
             isSkill1 = true;
