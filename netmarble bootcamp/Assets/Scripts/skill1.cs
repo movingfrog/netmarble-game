@@ -34,7 +34,7 @@ public class PlayerAttack1 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime == 0)
+        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime <= 0)
         {
             if (!boolsoneshot)
             {
