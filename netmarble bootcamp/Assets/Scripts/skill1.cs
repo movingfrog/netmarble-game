@@ -40,6 +40,7 @@ public class PlayerAttack1 : MonoBehaviour
             {
                 ani.SetTrigger("isChrag");
                 boolsoneshot = true;
+                PlayerMove.isSkill = true;
             }
             else
             {
@@ -63,6 +64,7 @@ public class PlayerAttack1 : MonoBehaviour
             wait = maxWait;
         if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2)
         {
+            PlayerMove.isSkill=false;
             boolsoneshot = false;
             Debug.Log("SDF");
             skillRange.SetActive(true);
@@ -81,6 +83,7 @@ public class PlayerAttack1 : MonoBehaviour
         {
             mytween.Pause();
             gameObject.layer = 3;
+            PlayerMove.isSkill = false;
         }
     }
 
