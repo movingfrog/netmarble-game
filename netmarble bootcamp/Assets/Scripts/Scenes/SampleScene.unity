@@ -479,13 +479,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 313dc705cceec9e4782e7931c34350f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 517d767ef1da2a348810240a5c7b9497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1282855756}
+  playerTransform: {fileID: 0}
   cameraPosition: {x: 0, y: 2.5, z: 0}
   center: {x: 0, y: 0}
-  mapSize: {x: 50, y: 10}
+  mapSize: {x: 0, y: 0}
   cameraMoveSpeed: 2.5
 --- !u!1 &589270899 stripped
 GameObject:

@@ -30,6 +30,12 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         IsGround = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
+        if (rb.velocity.y == 0 )
+        {
+            IsJump = false;
+            ani.SetBool("isJump", false);
+            jumpTime = 0;
+        }
         if (!npc1.talking && !npc2.talking)
             Jump();
     }
@@ -39,16 +45,6 @@ public class PlayerMove : MonoBehaviour
     {
         if (!npc1.talking && !npc2.talking && !isSkill)
             Move();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("ground"))
-        {
-            IsJump = false;
-            ani.SetBool("isJump", false);
-            jumpTime = 0;
-        }
     }
 
     public void Move()
