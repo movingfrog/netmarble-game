@@ -63,9 +63,9 @@ public class PlayerAttack2 : MonoBehaviour
 
     IEnumerator notStun(Collider2D collider)
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(1f);
         gameObject.layer = 3;
-        yield return new WaitForSeconds(2.7f);
+        yield return new WaitForSeconds(2.0f);
         if (collider != null)
         {
             if (collider.GetComponent<Example>() != null)
