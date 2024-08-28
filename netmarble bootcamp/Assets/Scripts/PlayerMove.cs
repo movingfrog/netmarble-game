@@ -33,14 +33,18 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         IsGround = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
-        if (rb.velocity.y == 0 )
+        if (!Pause.isPause)
         {
-            IsJump = false;
-            ani.SetBool("isJump", false);
-            jumpTime = 0;
+            if (rb.velocity.y == 0 )
+            {
+                IsJump = false;
+                ani.SetBool("isJump", false);
+                jumpTime = 0;
+            }
+            if (!npc1.talking && !npc2.talking)
+                Jump();
         }
-        if (!npc1.talking && !npc2.talking)
-            Jump();
+
     }
 
 

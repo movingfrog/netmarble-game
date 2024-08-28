@@ -34,7 +34,7 @@ public class PlayerAttack1 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime <= 0)
+        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime <= 0 && !Pause.isPause)
         {
 
             if (!boolsoneshot)
@@ -64,7 +64,7 @@ public class PlayerAttack1 : MonoBehaviour
         }
         if(wait >= maxWait)
             wait = maxWait;
-        if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2)
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2 && !Pause.isPause)
         {
             PlayerMove.isSkill=false;
             Effect.SetActive(false);

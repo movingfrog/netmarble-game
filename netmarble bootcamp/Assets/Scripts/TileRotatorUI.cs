@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 public class TileRotatorUI : MonoBehaviour
 {
     public float rotationDuration = 1f;  // 회전 시간
     public float delayBetweenTiles = 0.1f;  // 타일 간의 딜레이
+    public static bool LoadSceneEnd = false;
 
     void Start()
     {
@@ -22,11 +24,13 @@ public class TileRotatorUI : MonoBehaviour
         }
 
         // 모든 타일이 회전한 후에 씬 전환
-        Invoke("LoadNextScene", rotationDuration + delayBetweenTiles * transform.childCount);
+        Invoke("SceneStart", rotationDuration + delayBetweenTiles * transform.childCount);
     }
 
-    void LoadNextScene()
+    public void SceneStart()
     {
-        // 씬 전환 로직
+        LoadSceneEnd = true;
+        GetComponent<TileRotatorUI>().enabled = false;
+        gameObject.SetActive(false);
     }
 }

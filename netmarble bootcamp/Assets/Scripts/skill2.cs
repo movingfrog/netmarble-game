@@ -27,7 +27,7 @@ public class PlayerAttack2 : MonoBehaviour
             PlayerMove.isSkill = false;
         }
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, range);
-        if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime <= 0)
+        if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime <= 0 && !Pause.isPause)
         {
             gameObject.layer = 10;
             PlayerMove.isSkill = true;
