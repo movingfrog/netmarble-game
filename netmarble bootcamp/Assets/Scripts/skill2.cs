@@ -7,6 +7,7 @@ public class PlayerAttack2 : MonoBehaviour
     bool effect;
     public float skilldelay = 5f;
     public float range = 3f;
+    public static float curtime;
     Animator ani;
     EnemyHealth Damage;
 
@@ -16,6 +17,14 @@ public class PlayerAttack2 : MonoBehaviour
     {
         ani = GetComponent<Animator>();
         Effect.SetActive(false);
+    }
+
+    private void FixedUpdate()
+    {
+        if (isSkill1 && curtime != 5)
+        {
+            curtime += Time.deltaTime;
+        }
     }
 
     private void Update()

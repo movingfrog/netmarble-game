@@ -203,8 +203,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpPower: 3
-  plusJumpPower: 10
+  jumpPower: 4
+  plusJumpPower: 4
   effect: {fileID: 4301504468834953185}
   groundLayer:
     serializedVersion: 2
