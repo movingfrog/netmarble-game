@@ -10,14 +10,15 @@ public class Example : MonoBehaviour
     public LayerMask layerMask; // 탐지할 레이어 설정
     public float speed = 4f;
     private bool IsTarget;
-    Vector2 direc;
     Rigidbody2D rb;
     int cnt = 0;
     public bool stun = false;
+    Animator anim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         if (!IsTarget)
         {
             StartCoroutine("Idle");
@@ -28,6 +29,21 @@ public class Example : MonoBehaviour
     {
         // 현재 오브젝트의 위치를 기준으로 원을 그려서 충돌을 감지
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
+
+        if (rb.velocity.x > 0)
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            anim.SetBool("IsWalk", true);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            anim.SetBool("IsWalk", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalk", false);
+        }
 
         if (rb.velocity.y != 0)
         {
@@ -42,7 +58,7 @@ public class Example : MonoBehaviour
         foreach (var hitCollider in hitColliders)
         {
             Debug.Log("asdf");
-            if (transform.position.y + 0.5f - hitCollider.transform.position.y < 0.3f && transform.position.y + 0.5f - hitCollider.transform.position.y > -0.3f && cnt++ == 0 && (stun == false))
+            if (transform.position.y - hitCollider.transform.position.y < 0.3f && transform.position.y - hitCollider.transform.position.y > -0.3f && cnt++ == 0 && (stun == false))
             {
                 Debug.Log("fewa");
                 IsTarget = true;
@@ -51,9 +67,22 @@ public class Example : MonoBehaviour
                 path[1] = new Vector3((transform.position.x + hitCollider.transform.position.x) / 2, transform.position.y + 1f, (transform.position.z + hitCollider.transform.position.z) / 2); // 최고점
                 path[2] = hitCollider.transform.position;
 
+                if (transform.position.x - hitCollider.transform.position.x >= 0)
+                {
+                    transform.localScale = new Vector3(-1f, 1f, 1f);
+                }
+                else
+                {
+                    transform.localScale = new Vector3(1f, 1f, 1f);
+                }
+                anim.SetBool("IsAttack", true);
                 // 경로 트위닝
                 transform.DOPath(path, 0.75f, PathType.CatmullRom).SetEase(Ease.Linear);
                 StartCoroutine("Delay");
+            }
+            else
+            {
+                anim.SetBool("IsAttack", false);
             }
         }
     }
@@ -66,13 +95,12 @@ public class Example : MonoBehaviour
             {
                 if (Random.Range(0, 2) == 1)
                 {
-                    direc = Vector2.right;
+                    rb.velocity = new Vector2(1f, 0);
                 }
                 else
                 {
-                    direc = Vector2.left;
+                    rb.velocity = new Vector2(-1f, 0);
                 }
-                rb.velocity = direc;
                 yield return new WaitForSeconds(3f);
                 rb.velocity = Vector2.zero;
                 yield return new WaitForSeconds(3f);
