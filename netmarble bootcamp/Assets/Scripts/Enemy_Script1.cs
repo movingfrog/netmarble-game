@@ -69,12 +69,14 @@ public class Example1 : MonoBehaviour
                     if (transform.position.x - hitCollider.transform.position.x >= 0)
                     {
                         dir = Vector2.left;
-                        Instantiate(bullet, new Vector2(transform.position.x - 0.5f, transform.position.y), transform.rotation);
+                        yield return new WaitForSeconds(0.2f);
+                        Instantiate(bullet, new Vector2(transform.position.x - 0.5f, transform.position.y + 0.3f), transform.rotation);
                     }
                     else if (transform.position.x - hitCollider.transform.position.x < 0)
                     {
                         dir = Vector2.right;
-                        Instantiate(bullet, new Vector2(transform.position.x + 0.5f, transform.position.y), transform.rotation);
+                        yield return new WaitForSeconds(0.2f);
+                        Instantiate(bullet, new Vector2(transform.position.x + 0.5f, transform.position.y + 0.3f), transform.rotation);
                     }
                     yield return new WaitForSeconds(1f);
                 }
