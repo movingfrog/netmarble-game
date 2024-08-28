@@ -11,7 +11,7 @@ public class Skill2Effect : MonoBehaviour
         {
             Debug.Log("¶§·È´Ù!");
             Damage = collision.GetComponent<EnemyHealth>();
-            Damage.curHealth -= 45f;
+            Damage.curHealth -= PlayerAttack1.damage;
         }
     }
 }
