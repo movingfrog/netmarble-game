@@ -43,6 +43,7 @@ public class PlayerMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+
     private void Update()
     {
         IsGround = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);

@@ -16,6 +16,8 @@ public class Lap3Manager : MonoBehaviour
     private void Awake()
     {
         MapChange = 1;
+        WaveEnemies[2].SetActive(false);
+        WaveEnemies[1].SetActive(false);
     }
 
     private void Update()
