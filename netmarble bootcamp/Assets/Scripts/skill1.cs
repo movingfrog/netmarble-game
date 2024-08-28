@@ -90,7 +90,7 @@ public class PlayerAttack1 : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && isSkill2)
+        if ((collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Wall")) && isSkill2)
         {
             mytween.Pause();
             gameObject.layer = 3;
