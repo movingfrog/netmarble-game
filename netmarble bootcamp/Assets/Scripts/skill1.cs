@@ -67,6 +67,7 @@ public class PlayerAttack1 : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2)
         {
             PlayerMove.isSkill=false;
+            Effect.SetActive(false);
             boolsoneshot = false;
             Debug.Log("SDF");
             skillRange.SetActive(true);
@@ -96,7 +97,6 @@ public class PlayerAttack1 : MonoBehaviour
         ani.ResetTrigger("isAttack");
         ani.ResetTrigger("isChrag");
         ani.ResetTrigger("isChraging");
-        Effect.SetActive(false);
         skillRange.SetActive(false);
         isEndChraging = false;
     }
