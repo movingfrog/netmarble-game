@@ -17,10 +17,12 @@ public class Example1 : MonoBehaviour
     Collider2D[] hitColliders;
     Collider2D[] hitColliders2;
     public bool stun = false;
+    Animator anim;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         StartCoroutine("Summon");
     }
 
@@ -28,10 +30,29 @@ public class Example1 : MonoBehaviour
     {
         hitColliders2 = Physics2D.OverlapCircleAll(transform.position, radius2, layerMask);
         hitColliders = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
+        if (hitColliders.Length == 0)
+        {
+            anim.SetBool("IsAttack", false);
+        }
+        if (hitColliders2.Length == 0)
+        {
+            anim.SetBool("IsRun", false);
+        }
         foreach (var hitCollider in hitColliders2)
         {
+            if (hitCollider.transform.position.x - transform.position.x >= 0)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else
+            {
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+            }
             if (hitColliders.Length == 0 && (stun == false))
+            {
+                anim.SetBool("IsRun", true);
                 transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, hitCollider.transform.position.x, speed * Time.deltaTime), transform.position.y);
+            }
         }
     }
 
@@ -44,6 +65,7 @@ public class Example1 : MonoBehaviour
             {
                 if (hitColliders.Length > 0 && (stun == false))
                 {
+                    anim.SetBool("IsAttack", true);
                     if (transform.position.x - hitCollider.transform.position.x >= 0)
                     {
                         dir = Vector2.left;
@@ -54,11 +76,11 @@ public class Example1 : MonoBehaviour
                         dir = Vector2.right;
                         Instantiate(bullet, new Vector2(transform.position.x + 0.5f, transform.position.y), transform.rotation);
                     }
-                    yield return new WaitForSeconds(0.3f);
+                    yield return new WaitForSeconds(1f);
                 }
                 else if (hitColliders.Length == 0)
                 {
-                    yield return new WaitForSeconds(0.3f);
+                    yield return new WaitForSeconds(1f);
                 }
             }
             yield return null;

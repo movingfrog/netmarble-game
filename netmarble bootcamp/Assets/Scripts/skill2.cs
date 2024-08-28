@@ -29,7 +29,6 @@ public class PlayerAttack2 : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, range);
         if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime <= 0)
         {
-            gameObject.layer = 10;
             PlayerMove.isSkill = true;
             ani.SetTrigger("Skill2Attack");
             Invoke("coolTime", 0.6f);
@@ -40,9 +39,10 @@ public class PlayerAttack2 : MonoBehaviour
                 {
                     if (collider.gameObject.CompareTag("Enemy"))
                     {
+                        gameObject.layer = 10;
                         collider.transform.position = Vector2.Lerp(collider.transform.position, transform.position, 0.6f);
                         Damage = collider.GetComponent<EnemyHealth>();
-                        Damage.curHealth -= 35f;
+                        Damage.curHealth -= 60f;
                         if (collider.GetComponent<Example>() != null)
                         {
                             collider.GetComponent<Example>().stun = true;

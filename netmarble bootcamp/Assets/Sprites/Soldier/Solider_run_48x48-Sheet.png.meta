@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04e5e3598c657384bb8e94f3a58c0795
+guid: a209cd06a8fac144b86c28b41ddda4cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_0
+      name: Solider_run_48x48-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa223de9e5eba014e8c4cf200166a57e
-      internalID: -435658053
+      spriteID: 4bcfb84959a562642a5a903894a5ebdf
+      internalID: 418437530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_1
+      name: Solider_run_48x48-Sheet_1
       rect:
         serializedVersion: 2
         x: 48
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c8bb0aafe69f0d468b79f95a3e1b83f
-      internalID: -978243402
+      spriteID: 52aa66403fe20dd488af8dd0afb7a1e9
+      internalID: -1201960832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_2
+      name: Solider_run_48x48-Sheet_2
       rect:
         serializedVersion: 2
         x: 96
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7435bf9d4f604444696408c98ade8691
-      internalID: 1947347097
+      spriteID: 38d0d269d467c53428803cc8ab24d4e5
+      internalID: 1830050778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_3
+      name: Solider_run_48x48-Sheet_3
       rect:
         serializedVersion: 2
         x: 144
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63b6a198e91f4bb48bc82916f7852b8f
-      internalID: 843235655
+      spriteID: 7774bfbc7e2c89140ac3a40a4ec236da
+      internalID: 1573192136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_4
+      name: Solider_run_48x48-Sheet_4
       rect:
         serializedVersion: 2
         x: 192
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a210f99d09d1a9448275e92990cf71f
-      internalID: 1724149547
+      spriteID: d97d3469b33b24d41a28f34269379f63
+      internalID: -1278018135
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_5
+      name: Solider_run_48x48-Sheet_5
       rect:
         serializedVersion: 2
         x: 240
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d553b82376f174a4b8f24dc44370a851
-      internalID: 1675692125
+      spriteID: 803c04e42eebc134198494318fd99a3e
+      internalID: -1713016049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_6
+      name: Solider_run_48x48-Sheet_6
       rect:
         serializedVersion: 2
         x: 288
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d93aba07e2d9d1d45afc76b93857481a
-      internalID: 1291623285
+      spriteID: a16f3049b880a094ba6107b9fece750f
+      internalID: 881613753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_7
+      name: Solider_run_48x48-Sheet_7
       rect:
         serializedVersion: 2
         x: 336
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66372d294919287449a5ee9755bf419d
-      internalID: -1135410693
+      spriteID: 02f23dc1a06ba9d44b9dd62d3a768d3b
+      internalID: 1139457469
       vertices: []
       indices: 
       edges: []
@@ -301,14 +301,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EnemyWalk_48x48-Sheet_0: -435658053
-      EnemyWalk_48x48-Sheet_1: -978243402
-      EnemyWalk_48x48-Sheet_2: 1947347097
-      EnemyWalk_48x48-Sheet_3: 843235655
-      EnemyWalk_48x48-Sheet_4: 1724149547
-      EnemyWalk_48x48-Sheet_5: 1675692125
-      EnemyWalk_48x48-Sheet_6: 1291623285
-      EnemyWalk_48x48-Sheet_7: -1135410693
+      Solider_run_48x48-Sheet_0: 418437530
+      Solider_run_48x48-Sheet_1: -1201960832
+      Solider_run_48x48-Sheet_2: 1830050778
+      Solider_run_48x48-Sheet_3: 1573192136
+      Solider_run_48x48-Sheet_4: -1278018135
+      Solider_run_48x48-Sheet_5: -1713016049
+      Solider_run_48x48-Sheet_6: 881613753
+      Solider_run_48x48-Sheet_7: 1139457469
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

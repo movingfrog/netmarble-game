@@ -6,7 +6,7 @@ using static UnityEngine.GraphicsBuffer;
 
 public class Example : MonoBehaviour
 {
-    public float radius = 4.0f; // 원의 반지름
+    public float radius = 6.0f; // 원의 반지름
     public LayerMask layerMask; // 탐지할 레이어 설정
     public float speed = 4f;
     private bool IsTarget;
@@ -64,7 +64,7 @@ public class Example : MonoBehaviour
                 IsTarget = true;
                 Vector3[] path = new Vector3[3];
                 path[0] = transform.position;
-                path[1] = new Vector3((transform.position.x + hitCollider.transform.position.x) / 2, transform.position.y + 1f, (transform.position.z + hitCollider.transform.position.z) / 2); // 최고점
+                path[1] = new Vector3((transform.position.x + hitCollider.transform.position.x) / 2, transform.position.y + 2f, (transform.position.z + hitCollider.transform.position.z) / 2); // 최고점
                 path[2] = hitCollider.transform.position;
 
                 if (transform.position.x - hitCollider.transform.position.x >= 0)
@@ -95,11 +95,11 @@ public class Example : MonoBehaviour
             {
                 if (Random.Range(0, 2) == 1)
                 {
-                    rb.velocity = new Vector2(1f, 0);
+                    rb.velocity = new Vector2(1f, rb.velocity.y);
                 }
                 else
                 {
-                    rb.velocity = new Vector2(-1f, 0);
+                    rb.velocity = new Vector2(-1f, rb.velocity.y);
                 }
                 yield return new WaitForSeconds(3f);
                 rb.velocity = Vector2.zero;

@@ -1,6 +1,7 @@
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerAttack1 : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class PlayerAttack1 : MonoBehaviour
     Tween mytween;
     bool isEndChraging;
     bool boolsoneshot;
+    public static float damage;
 
     public static bool isSkill2;
     private void Start()
@@ -49,7 +51,7 @@ public class PlayerAttack1 : MonoBehaviour
             }
             Debug.Log(isSkill2);
             gameObject.layer = 9;
-            //데미지 점점 증가 코드 예: damage += uping * uping * Time.deltaTime;
+            damage += uping * uping * Time.deltaTime;
             rushPower += uping * Time.deltaTime;
             wait += uping * Time.deltaTime * 1/2;
         }
@@ -64,6 +66,10 @@ public class PlayerAttack1 : MonoBehaviour
         }
         if(wait >= maxWait)
             wait = maxWait;
+        if (damage >= 80f)
+        {
+            damage = 80f;
+        }
         if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2)
         {
             PlayerMove.isSkill=false;
@@ -115,5 +121,6 @@ public class PlayerAttack1 : MonoBehaviour
         yield return new WaitForSeconds(wait);
         wait = 0;
         isSkill2 = false;
+        damage = 0;
     }
 }

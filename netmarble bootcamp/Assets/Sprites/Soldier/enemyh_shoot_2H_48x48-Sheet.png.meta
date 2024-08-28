@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 04e5e3598c657384bb8e94f3a58c0795
+guid: 1d5837a0583b5234388435e23be578f4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_0
+      name: enemyh_shoot_2H_48x48-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa223de9e5eba014e8c4cf200166a57e
-      internalID: -435658053
+      spriteID: c7ecd92026134544e9ee81ebdfbe9830
+      internalID: -1630504491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_1
+      name: enemyh_shoot_2H_48x48-Sheet_1
       rect:
         serializedVersion: 2
         x: 48
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c8bb0aafe69f0d468b79f95a3e1b83f
-      internalID: -978243402
+      spriteID: 7f73d96aac88b4341a985aa2146cb01c
+      internalID: -1364078659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_2
+      name: enemyh_shoot_2H_48x48-Sheet_2
       rect:
         serializedVersion: 2
         x: 96
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7435bf9d4f604444696408c98ade8691
-      internalID: 1947347097
+      spriteID: b52117954bfac2a499297dcd510f44b6
+      internalID: 138928427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_3
+      name: enemyh_shoot_2H_48x48-Sheet_3
       rect:
         serializedVersion: 2
         x: 144
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 63b6a198e91f4bb48bc82916f7852b8f
-      internalID: 843235655
+      spriteID: fe8249ec59110bb418af99bb41b674ce
+      internalID: -310979929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_4
+      name: enemyh_shoot_2H_48x48-Sheet_4
       rect:
         serializedVersion: 2
         x: 192
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a210f99d09d1a9448275e92990cf71f
-      internalID: 1724149547
+      spriteID: dc2250f66de3a384f9c5fdf686ce757b
+      internalID: 1536551508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_5
+      name: enemyh_shoot_2H_48x48-Sheet_5
       rect:
         serializedVersion: 2
         x: 240
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d553b82376f174a4b8f24dc44370a851
-      internalID: 1675692125
+      spriteID: e45aea8ab838b3849af71cd8520b166a
+      internalID: 238868885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_6
+      name: enemyh_shoot_2H_48x48-Sheet_6
       rect:
         serializedVersion: 2
         x: 288
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d93aba07e2d9d1d45afc76b93857481a
-      internalID: 1291623285
+      spriteID: 7ab8a43e4b818de429a37c56da2f8c23
+      internalID: 844601840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: EnemyWalk_48x48-Sheet_7
+      name: enemyh_shoot_2H_48x48-Sheet_7
       rect:
         serializedVersion: 2
         x: 336
@@ -284,8 +284,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66372d294919287449a5ee9755bf419d
-      internalID: -1135410693
+      spriteID: f4675be6efb9baa438556a69133b4d78
+      internalID: 582334371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyh_shoot_2H_48x48-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4563e7a93c15cd44d8ba1f0013d07d7d
+      internalID: -890207761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyh_shoot_2H_48x48-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6a5ea92e16e904888aa8c27fdcc842
+      internalID: -417237020
       vertices: []
       indices: 
       edges: []
@@ -301,14 +343,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      EnemyWalk_48x48-Sheet_0: -435658053
-      EnemyWalk_48x48-Sheet_1: -978243402
-      EnemyWalk_48x48-Sheet_2: 1947347097
-      EnemyWalk_48x48-Sheet_3: 843235655
-      EnemyWalk_48x48-Sheet_4: 1724149547
-      EnemyWalk_48x48-Sheet_5: 1675692125
-      EnemyWalk_48x48-Sheet_6: 1291623285
-      EnemyWalk_48x48-Sheet_7: -1135410693
+      enemyh_shoot_2H_48x48-Sheet_0: -1630504491
+      enemyh_shoot_2H_48x48-Sheet_1: -1364078659
+      enemyh_shoot_2H_48x48-Sheet_2: 138928427
+      enemyh_shoot_2H_48x48-Sheet_3: -310979929
+      enemyh_shoot_2H_48x48-Sheet_4: 1536551508
+      enemyh_shoot_2H_48x48-Sheet_5: 238868885
+      enemyh_shoot_2H_48x48-Sheet_6: 844601840
+      enemyh_shoot_2H_48x48-Sheet_7: 582334371
+      enemyh_shoot_2H_48x48-Sheet_8: -890207761
+      enemyh_shoot_2H_48x48-Sheet_9: -417237020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -23,6 +23,19 @@ public class PlayerMove : MonoBehaviour
     bool IsJump;
     bool IsJumping;
     public static bool isSkill;
+
+    private void Awake()
+    {
+        if (GameObject.FindGameObjectsWithTag("Player").Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         Speed = speed;
