@@ -8,6 +8,7 @@ public class PlayerAttack2 : MonoBehaviour
     public float skilldelay = 5f;
     public float range = 3f;
     Animator ani;
+    EnemyHealth Damage;
 
     public static bool isSkill1;
 
@@ -39,11 +40,35 @@ public class PlayerAttack2 : MonoBehaviour
                     if (collider.gameObject.CompareTag("Enemy"))
                     {
                         collider.transform.position = Vector2.Lerp(collider.transform.position, transform.position, 0.6f);
+                        Damage = collider.GetComponent<EnemyHealth>();
+                        Damage.curHealth -= 35f;
+                        if (collider.GetComponent<Example>() != null)
+                        {
+                            collider.GetComponent<Example>().stun = true;
+                            Invoke("notStun", 1f);
+                        }
+                        else if(collider.GetComponent<Example1>() != null)
+                        {
+                            collider.GetComponent<Example1>().stun = true;
+                            Invoke("notStun", 1f);
+                        }
                     }
                 }
             }
             Debug.Log("sldjflsk");
             StartCoroutine("SkillWaiting");
+        }
+    }
+
+    void notStun(Collider2D collider)
+    {
+        if (collider.GetComponent<Example>() != null)
+        {
+            collider.GetComponent<Example>().stun = false;
+        }
+        else if (collider.GetComponent<Example1>() != null)
+        {
+            collider.GetComponent<Example1>().stun = false;
         }
     }
 

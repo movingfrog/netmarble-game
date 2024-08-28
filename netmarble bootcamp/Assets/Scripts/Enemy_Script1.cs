@@ -16,6 +16,7 @@ public class Example1 : MonoBehaviour
     public static Vector2 dir;
     Collider2D[] hitColliders;
     Collider2D[] hitColliders2;
+    public bool stun = false;
 
     private void Awake()
     {
