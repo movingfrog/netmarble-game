@@ -13,6 +13,7 @@ public class Example : MonoBehaviour
     Vector2 direc;
     Rigidbody2D rb;
     int cnt = 0;
+    public bool stun = false;
 
     private void Awake()
     {
