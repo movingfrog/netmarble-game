@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    Animator ani;
     Rigidbody2D rb;
     [SerializeField]
-    private float speed;
+    private float speed = 10f;
     [SerializeField]
     private float jumpPower = 3;
     [SerializeField]
@@ -12,26 +13,32 @@ public class PlayerMove : MonoBehaviour
     private float jumpTime = 0;
     private float jumpLimit = 0.25f;
     float gravity;
+    public GameObject effect;
+
     public LayerMask groundLayer;
 
     bool IsGround;
     bool IsJump;
     bool IsJumping;
+    public static bool isSkill;
     private void Start()
     {
+        ani = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
         IsGround = Physics.Raycast(transform.position, Vector3.down, 0.1f, groundLayer);
-        Jump();
+        if (!npc1.talking && !npc2.talking)
+            Jump();
     }
 
 
     private void FixedUpdate()
     {
-        Move();
+        if (!npc1.talking && !npc2.talking && !isSkill)
+            Move();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,6 +46,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("ground"))
         {
             IsJump = false;
+            ani.SetBool("isJump", false);
             jumpTime = 0;
         }
     }
@@ -48,13 +56,18 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            transform.localScale = new Vector2(1, 1);
+            ani.SetBool("isRun", true);
         }
         else if (Input.GetAxisRaw("Horizontal") < 0)
         {
             rb.velocity = new Vector2(-speed, rb.velocity.y);
+            ani.SetBool("isRun", true);
+            transform.localScale = new Vector2(-1, 1);
         }
         else
         {
+            ani.SetBool("isRun", false);
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
@@ -70,6 +83,7 @@ public class PlayerMove : MonoBehaviour
             IsJumping = true;
             IsJump = true;
             jumpTime = 0;
+            ani.SetBool("isJump", true);
         }
         if (IsJumping && Input.GetKey(KeyCode.C))
         {
