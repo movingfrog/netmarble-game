@@ -77,7 +77,15 @@ public class PlayerAttack1 : MonoBehaviour
             StartCoroutine("skillDelay");
             StartCoroutine("SkillWaiting");
             isSkill2 = true;
+            gameObject.layer = 10;
+            StartCoroutine("nonEnemy");
         }
+    }
+
+    IEnumerator nonEnemy()
+    {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.layer = 3;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

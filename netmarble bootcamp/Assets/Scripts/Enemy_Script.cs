@@ -42,7 +42,7 @@ public class Example : MonoBehaviour
         foreach (var hitCollider in hitColliders)
         {
             Debug.Log("asdf");
-            if (transform.position.y + 0.5f - hitCollider.transform.position.y < 0.3f && transform.position.y + 0.5f - hitCollider.transform.position.y > -0.3f && cnt++ == 0)
+            if (transform.position.y + 0.5f - hitCollider.transform.position.y < 0.3f && transform.position.y + 0.5f - hitCollider.transform.position.y > -0.3f && cnt++ == 0 && (stun == false))
             {
                 Debug.Log("fewa");
                 IsTarget = true;
@@ -62,7 +62,7 @@ public class Example : MonoBehaviour
     {
         for (; ;)
         {
-            if (IsTarget == false)
+            if ((IsTarget == false) && (stun == false))
             {
                 if (Random.Range(0, 2) == 1)
                 {

@@ -30,7 +30,7 @@ public class Example1 : MonoBehaviour
         hitColliders = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
         foreach (var hitCollider in hitColliders2)
         {
-            if (hitColliders.Length == 0)
+            if (hitColliders.Length == 0 && (stun == false))
                 transform.position = new Vector2(Mathf.MoveTowards(transform.position.x, hitCollider.transform.position.x, speed * Time.deltaTime), transform.position.y);
         }
     }
@@ -42,7 +42,7 @@ public class Example1 : MonoBehaviour
             hitColliders = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
             foreach (var hitCollider in hitColliders)
             {
-                if (hitColliders.Length > 0)
+                if (hitColliders.Length > 0 && (stun == false))
                 {
                     if (transform.position.x - hitCollider.transform.position.x >= 0)
                     {

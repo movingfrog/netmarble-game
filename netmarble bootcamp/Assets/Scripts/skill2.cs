@@ -29,6 +29,7 @@ public class PlayerAttack2 : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, range);
         if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime <= 0)
         {
+            gameObject.layer = 10;
             PlayerMove.isSkill = true;
             ani.SetTrigger("Skill2Attack");
             Invoke("coolTime", 0.6f);
@@ -45,12 +46,12 @@ public class PlayerAttack2 : MonoBehaviour
                         if (collider.GetComponent<Example>() != null)
                         {
                             collider.GetComponent<Example>().stun = true;
-                            Invoke("notStun", 1f);
+                            StartCoroutine("notStun", collider);
                         }
                         else if(collider.GetComponent<Example1>() != null)
                         {
                             collider.GetComponent<Example1>().stun = true;
-                            Invoke("notStun", 1f);
+                            StartCoroutine("notStun", collider);
                         }
                     }
                 }
@@ -60,15 +61,21 @@ public class PlayerAttack2 : MonoBehaviour
         }
     }
 
-    void notStun(Collider2D collider)
+    IEnumerator notStun(Collider2D collider)
     {
-        if (collider.GetComponent<Example>() != null)
+        yield return new WaitForSeconds(0.3f);
+        gameObject.layer = 3;
+        yield return new WaitForSeconds(2.7f);
+        if (collider != null)
         {
-            collider.GetComponent<Example>().stun = false;
-        }
-        else if (collider.GetComponent<Example1>() != null)
-        {
-            collider.GetComponent<Example1>().stun = false;
+            if (collider.GetComponent<Example>() != null)
+            {
+                collider.GetComponent<Example>().stun = false;
+            }
+            else if (collider.GetComponent<Example1>() != null)
+            {
+                collider.GetComponent<Example1>().stun = false;
+            }
         }
     }
 
