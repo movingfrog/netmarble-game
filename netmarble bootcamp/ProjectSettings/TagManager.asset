@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Weapon
   - Wall
+  - PlayerHpBar
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - PlayerAttack
   - Non-Enemy
   - Wall
-  - 
+  - NPC
   - 
   - 
   - 

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 
 public class PlayerAttack2 : MonoBehaviour
 {
@@ -40,7 +41,7 @@ public class PlayerAttack2 : MonoBehaviour
         {
             PlayerMove.isSkill = true;
             ani.SetTrigger("Skill2Attack");
-            Invoke("coolTime", 0.6f);
+            Invoke("coolTimes", 0.6f);
             isSkill1 = true;
             Debug.Log(isSkill1);
             {
@@ -67,6 +68,7 @@ public class PlayerAttack2 : MonoBehaviour
             }
             Debug.Log("sldjflsk");
             StartCoroutine("SkillWaiting");
+            coolTime.Skill.fillAmount = 1;
         }
     }
 
@@ -92,7 +94,7 @@ public class PlayerAttack2 : MonoBehaviour
     {
         Effect.SetActive(false);
     }
-    public void coolTime()
+    public void coolTimes()
     {
         Effect.SetActive(true);
         effect = true;

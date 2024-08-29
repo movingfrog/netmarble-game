@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public GameObject image;
+    GameObject image;
     Image HPBar;
     float curHP = 100f;
     float maxHP = 100f;
@@ -14,7 +15,44 @@ public class PlayerHealth : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        image = GameObject.FindGameObjectWithTag("PlayerHpBar");
         HPBar = image.GetComponent<Image>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "mainUI")
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            image = GameObject.FindGameObjectWithTag("PlayerHpBar");
+            HPBar = image.GetComponent<Image>();
+        }
+        if (scene.name == "Lab" || scene.name == "Tunnel")
+        {
+            transform.position = new Vector3(-2.57f, -0.07f, 0f);
+        }
+        else if(scene.name == "Lab_2")
+        {
+            transform.position = new Vector3(-8.431178f, -2.732734f, 0f);
+        }
+        else if (scene.name == "Lab_3")
+        {
+            transform.position = new Vector3(7.1115f, -2.707f, 0f);
+        }
+        else if(scene.name == "Village")
+        {
+            transform.position = new Vector3(0.56f, -1.14f, 0);
+        }
+    }
+
+    void OnDestroy()
+    {
+        // 이벤트 구독 해제
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     // Update is called once per frame
