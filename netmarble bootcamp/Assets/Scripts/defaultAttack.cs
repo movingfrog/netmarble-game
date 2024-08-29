@@ -24,7 +24,7 @@ public class defaultAttack : MonoBehaviour
             if (curtime <= 0) //ÆòÅ¸ ÄðÅ¸ÀÓ
             {
                 isAttack = false;
-                if (Input.GetKeyDown(KeyCode.X))
+                if (Input.GetKeyDown(KeyCode.X) && !npc1.talking && !npc2.talking)
                 {
                     isAttack = true;
                     int cri = Random.Range(0, 4);
@@ -50,6 +50,17 @@ public class defaultAttack : MonoBehaviour
                                 Damage.curHealth -= 10;
                             }
                             Damage.curHealth -= 20f;
+                            if (colliders.GetComponent<Example>() != null)
+                            {
+                                colliders.GetComponent<Example>().stun = true;
+                                StartCoroutine("notStun", colliders);
+                            }
+                            else if (colliders.GetComponent<Example1>() != null)
+                            {
+                                colliders.GetComponent<Example1>().stun = true;
+                                StartCoroutine("notStun", colliders);
+                            }
+                            
                         }
                     }
                     curtime = cooltime;
@@ -61,6 +72,22 @@ public class defaultAttack : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator notStun(Collider2D collider)
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (collider != null)
+        {
+            if (collider.GetComponent<Example>() != null)
+            {
+                collider.GetComponent<Example>().stun = false;
+            }
+            else if (collider.GetComponent<Example1>() != null)
+            {
+                collider.GetComponent<Example1>().stun = false;
+            }
+        }
     }
 
     private void OnDrawGizmos()

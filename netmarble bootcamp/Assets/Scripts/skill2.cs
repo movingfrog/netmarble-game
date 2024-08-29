@@ -29,7 +29,7 @@ public class PlayerAttack2 : MonoBehaviour
             PlayerMove.isSkill = false;
         }
         Collider2D[] colliders = Physics2D.OverlapCircleAll(this.transform.position, range);
-        if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime <= 0 && !Pause.isPause)
+        if (Input.GetKeyDown(KeyCode.V) && !isSkill1 && defaultAttack.curtime <= 0 && !Pause.isPause && !npc1.talking && !npc2.talking)
         {
             PlayerMove.isSkill = true;
             ani.SetTrigger("Skill2Attack");

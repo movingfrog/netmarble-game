@@ -17,9 +17,6 @@ public class coolTime : MonoBehaviour
         {
             Skill = GameObject.Find("Suction").GetComponent<Image>();
         }
-        Debug.Log(skill.name);
-        Debug.Log(Skill.name);
-        Debug.Log(gameObject.name);
     }
 
     private void Update()

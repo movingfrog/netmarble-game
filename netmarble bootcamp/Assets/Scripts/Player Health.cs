@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     float curHP = 100f;
     float maxHP = 100f;
     Rigidbody2D rb;
+    public GameObject light;
 
     private void Awake()
     {
@@ -31,9 +32,18 @@ public class PlayerHealth : MonoBehaviour
             image = GameObject.FindGameObjectWithTag("PlayerHpBar");
             HPBar = image.GetComponent<Image>();
         }
-        if (scene.name == "Lab" || scene.name == "Tunnel")
+        if (scene.name == "Lab")
         {
             transform.position = new Vector3(-2.57f, -0.07f, 0f);
+        }
+        else if(scene.name == "Tunnel")
+        {
+            transform.position = new Vector3(-12.57f, -0.07f, 0f);
+            light.SetActive(true);
+        }
+        else if(scene.name == "Tunnel_2")
+        {
+            transform.position = new Vector3(-17.01f, -0.73f, 0f);
         }
         else if(scene.name == "Lab_2")
         {

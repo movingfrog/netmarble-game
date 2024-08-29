@@ -36,7 +36,7 @@ public class PlayerAttack1 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime <= 0 && !Pause.isPause)
+        if (Input.GetKey(KeyCode.LeftShift) && !isSkill2 &&defaultAttack.curtime <= 0 && !Pause.isPause && !npc1.talking && !npc2.talking)
         {
 
             if (!boolsoneshot)
@@ -70,7 +70,7 @@ public class PlayerAttack1 : MonoBehaviour
         {
             damage = 80f;
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2 && !Pause.isPause)
+        if (Input.GetKeyUp(KeyCode.LeftShift) && !isSkill2 && !Pause.isPause && !npc1.talking && !npc2.talking)
         {
             PlayerMove.isSkill=false;
             Effect.SetActive(false);

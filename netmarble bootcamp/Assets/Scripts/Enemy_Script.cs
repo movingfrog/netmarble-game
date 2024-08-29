@@ -14,6 +14,7 @@ public class Example : MonoBehaviour
     int cnt = 0;
     public bool stun = false;
     Animator anim;
+    bool IsAttack = false;
 
     private void Awake()
     {
@@ -45,7 +46,7 @@ public class Example : MonoBehaviour
             anim.SetBool("IsWalk", false);
         }
 
-        if (rb.velocity.y != 0)
+        if (IsAttack)
         {
             gameObject.layer = 8;
         }
@@ -60,6 +61,7 @@ public class Example : MonoBehaviour
             Debug.Log("asdf");
             if (transform.position.y - hitCollider.transform.position.y < 0.3f && transform.position.y - hitCollider.transform.position.y > -0.3f && cnt++ == 0 && (stun == false))
             {
+                IsAttack = true;
                 Debug.Log("fewa");
                 IsTarget = true;
                 Vector3[] path = new Vector3[3];
@@ -115,7 +117,9 @@ public class Example : MonoBehaviour
     IEnumerator Delay()
     {
         IsTarget = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.75f);
+        IsAttack = false;
+        yield return new WaitForSeconds(2.25f);
         cnt = 0;
     }
 
