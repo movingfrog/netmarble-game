@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 
@@ -13,8 +14,7 @@ public class PlayerAttack1 : MonoBehaviour
     private float maxRushPower = 10;
     [SerializeField]
     private float maxWait = 5f;
-    [SerializeField]
-    private float wait;
+    public static float wait;
     [SerializeField]
     private float uping = 5f;
     Animator ani;
@@ -82,6 +82,7 @@ public class PlayerAttack1 : MonoBehaviour
             rushPower = 0;
             StartCoroutine("skillDelay");
             StartCoroutine("SkillWaiting");
+            coolTime.skill.fillAmount = wait / 5;
             isSkill2 = true;
             gameObject.layer = 10;
             StartCoroutine("nonEnemy");
