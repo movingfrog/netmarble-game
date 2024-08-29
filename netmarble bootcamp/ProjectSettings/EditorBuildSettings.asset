@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Scenes/Village.unity
     guid: 18f37eb2f90baba48be176142a27d94d
+  - enabled: 1
+    path: Assets/Scripts/Scenes/Tunnel.unity
+    guid: 74c3762e07877fc41a0017db1159f62c
+  - enabled: 1
+    path: Assets/Scripts/Scenes/Tunnel_2.unity
+    guid: 3ff246aa4dfb0094d9da1e1d5b2535db
   m_configObjects: {}

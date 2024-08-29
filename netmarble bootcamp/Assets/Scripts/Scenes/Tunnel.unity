@@ -17444,6 +17444,7 @@ GameObject:
   - component: {fileID: 364703271}
   - component: {fileID: 364703272}
   - component: {fileID: 364703273}
+  - component: {fileID: 364703274}
   m_Layer: 0
   m_Name: Script
   m_TagString: Untagged
@@ -17492,6 +17493,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BG: {fileID: 1737193564}
+--- !u!114 &364703274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364703270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0ffed97b585cee47a9431fd09bccdab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pos: {x: -2.57, y: -0.07, z: 0}
+  Player: {fileID: 1501346418}
 --- !u!1 &426113211
 GameObject:
   m_ObjectHideFlags: 0
@@ -24033,6 +24048,11 @@ PrefabInstance:
       addedObject: {fileID: 648447122}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
+--- !u!1 &1501346418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 496018549521472234, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
+  m_PrefabInstance: {fileID: 1501346417}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1528397443
 GameObject:
   m_ObjectHideFlags: 0
@@ -26866,7 +26886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5284653756835795857, guid: 7ec38b0ca37d733439eed277c7cf14ef, type: 3}
       propertyPath: SceneName
-      value: Lab_3
+      value: Tunnel_2
       objectReference: {fileID: 0}
     - target: {fileID: 5395690912403529463, guid: 7ec38b0ca37d733439eed277c7cf14ef, type: 3}
       propertyPath: m_AnchorMax.y
@@ -28550,8 +28570,8 @@ RectTransform:
   m_GameObject: {fileID: 1737193564}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 426113212}
   - {fileID: 1621429223}
@@ -28561,7 +28581,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.953308, y: -1.1813049}
+  m_AnchoredPosition: {x: -2.953308, y: -1.1812744}
   m_SizeDelta: {x: 20.0823, y: 25.9888}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737193566
