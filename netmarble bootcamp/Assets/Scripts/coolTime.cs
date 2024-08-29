@@ -17,9 +17,6 @@ public class coolTime : MonoBehaviour
         {
             Skill = GameObject.Find("Suction").GetComponent<Image>();
         }
-        Debug.Log(skill.name);
-        Debug.Log(Skill.name);
-        Debug.Log(gameObject.name);
     }
 
     private void Update()
@@ -27,14 +24,10 @@ public class coolTime : MonoBehaviour
         if(PlayerAttack1.isSkill2)
         {
            skill.fillAmount -= Time.deltaTime/5;
-           Debug.Log(skill.name);
         }
-        if(PlayerAttack2.isSkill1) //여기서 1에서 점점 내려감
+        if(PlayerAttack2.isSkill1)
         {
            Skill.fillAmount -= Time.deltaTime/5;
-           Debug.Log(Skill.name);
-           //여기?
         }
-        //여기 말고?
     }
 }
