@@ -20,14 +20,6 @@ public class PlayerAttack2 : MonoBehaviour
         Effect.SetActive(false);
     }
 
-    private void FixedUpdate()
-    {
-        if (isSkill1 && curtime != 5)
-        {
-            curtime += Time.deltaTime;
-        }
-    }
-
     private void Update()
     {
         if(effect)
@@ -43,6 +35,7 @@ public class PlayerAttack2 : MonoBehaviour
             ani.SetTrigger("Skill2Attack");
             Invoke("coolTimes", 0.6f);
             isSkill1 = true;
+            coolTime.Skill.fillAmount = 1;
             Debug.Log(isSkill1);
             {
                 foreach (Collider2D collider in colliders)
@@ -68,7 +61,6 @@ public class PlayerAttack2 : MonoBehaviour
             }
             Debug.Log("sldjflsk");
             StartCoroutine("SkillWaiting");
-            coolTime.Skill.fillAmount = 1;
         }
     }
 
