@@ -3,38 +3,38 @@ using UnityEngine.UI;
 
 public class coolTime : MonoBehaviour
 {
-    public GameObject skillObject;
     public static Image skill;
     public static Image Skill;
-
-    public int oneandtwo;
 
 
     private void Awake()
     {
         if(this.gameObject.name == "RushAttack")
         {
-            oneandtwo = 1;
             skill = GameObject.Find("Rush").GetComponent<Image>();
         }
-        else if(this.gameObject.name == "SettESkill")
+        if(this.gameObject.name == "SettESkill") //여기서 자신이 뭔지 인식함
         {
-            oneandtwo = 2;
             Skill = GameObject.Find("Suction").GetComponent<Image>();
         }
         Debug.Log(skill.name);
+        Debug.Log(Skill.name);
         Debug.Log(gameObject.name);
     }
 
     private void Update()
     {
-         if(PlayerAttack1.isSkill2 && oneandtwo == 1)
-         {
-            skill.fillAmount -= Time.deltaTime/5;
-         }
-         else if(PlayerAttack2.isSkill1 && oneandtwo == 2)
+        if(PlayerAttack1.isSkill2)
         {
-            Skill.fillAmount -= Time.deltaTime/5;
+           skill.fillAmount -= Time.deltaTime/5;
+           Debug.Log(skill.name);
         }
+        if(PlayerAttack2.isSkill1) //여기서 1에서 점점 내려감
+        {
+           Skill.fillAmount -= Time.deltaTime/5;
+           Debug.Log(Skill.name);
+           //여기?
+        }
+        //여기 말고?
     }
 }

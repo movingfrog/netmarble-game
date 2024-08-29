@@ -43,6 +43,7 @@ public class defaultAttack : MonoBehaviour
                         if (colliders.gameObject.CompareTag("Enemy"))
                         {
                             Debug.Log("¶§·È´Ù!");
+                            colliders.GetComponent<Rigidbody2D>().velocity = new Vector2(3 * (colliders.transform.position.x - transform.position.x >= 0 ? 1 : -1), 3);
                             Damage = colliders.GetComponent<EnemyHealth>();
                             if (cri == 0)
                             {
