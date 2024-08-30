@@ -6705,7 +6705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1388476539}
-  cameraPosition: {x: 0, y: 0, z: 0}
+  cameraPosition: {x: 0, y: 2.5, z: 0}
   center: {x: 50, y: 0}
   mapSize: {x: 59, y: 10}
   cameraMoveSpeed: 2.5

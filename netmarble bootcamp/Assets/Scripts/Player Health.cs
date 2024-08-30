@@ -51,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else if (scene.name == "Lab_3")
         {
-            transform.position = new Vector3(7.1115f, -2.707f, 0f);
+            transform.position = new Vector3(-8.386908f, -2.737552f, 0f);
         }
         else if(scene.name == "Village")
         {
