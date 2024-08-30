@@ -13,21 +13,21 @@ public class coolTime : MonoBehaviour
         {
             skill = GameObject.Find("Rush").GetComponent<Image>();
         }
-        if(this.gameObject.name == "SettESkill") //여기서 자신이 뭔지 인식함
+        if(this.gameObject.name == "SettESkill")
         {
             Skill = GameObject.Find("Suction").GetComponent<Image>();
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(PlayerAttack1.isSkill2)
         {
-           skill.fillAmount -= Time.deltaTime/5;
+           skill.fillAmount -= Time.deltaTime/10;
         }
         if(PlayerAttack2.isSkill1)
         {
-           Skill.fillAmount -= Time.deltaTime/5;
+           Skill.fillAmount -= Time.deltaTime/10;
         }
     }
 }

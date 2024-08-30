@@ -1,8 +1,6 @@
 using DG.Tweening;
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerAttack1 : MonoBehaviour
 {
@@ -14,7 +12,7 @@ public class PlayerAttack1 : MonoBehaviour
     private float maxRushPower = 10;
     [SerializeField]
     private float maxWait = 5f;
-    public static float wait;
+    public float wait;
     [SerializeField]
     private float uping = 5f;
     Animator ani;
