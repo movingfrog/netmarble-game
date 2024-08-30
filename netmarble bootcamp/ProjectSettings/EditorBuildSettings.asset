@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Scenes/Tunnel_2.unity
     guid: 3ff246aa4dfb0094d9da1e1d5b2535db
+  - enabled: 1
+    path: Assets/Scripts/Scenes/GameOver.unity
+    guid: fdeed01aa0bc91d47bb29a4e03cf36e0
   m_configObjects: {}

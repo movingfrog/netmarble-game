@@ -79,6 +79,7 @@ public class defaultAttack : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         if (collider != null)
         {
+            collider.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             if (collider.GetComponent<Example>() != null)
             {
                 collider.GetComponent<Example>().stun = false;
