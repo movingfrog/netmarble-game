@@ -75,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
+            rb.gravityScale = 2f;
             int dirc = ((transform.position.x - collision.gameObject.transform.position.x > 0) ? 1 : -1);
             rb.AddForce(new Vector2(dirc, 1) * 7, ForceMode2D.Impulse);
             gameObject.layer = 10;

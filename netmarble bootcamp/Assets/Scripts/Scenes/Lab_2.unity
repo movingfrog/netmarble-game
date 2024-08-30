@@ -39552,6 +39552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BG: {fileID: 1005507886}
+  Size: {x: 4.89, y: 5.11}
 --- !u!1001 &1830510868
 PrefabInstance:
   m_ObjectHideFlags: 0
