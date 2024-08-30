@@ -9,6 +9,7 @@ TagManager:
   - Weapon
   - Wall
   - PlayerHpBar
+  - Elevator
   layers:
   - Default
   - TransparentFX

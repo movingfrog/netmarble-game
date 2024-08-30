@@ -54325,7 +54325,7 @@ GameObject:
   - component: {fileID: 1863223498}
   m_Layer: 0
   m_Name: factory_74
-  m_TagString: Untagged
+  m_TagString: Elevator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54455,6 +54455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BG: {fileID: 284445538}
+  Size: {x: 4.89, y: 5.11}
 --- !u!1001 &1930836705
 PrefabInstance:
   m_ObjectHideFlags: 0
