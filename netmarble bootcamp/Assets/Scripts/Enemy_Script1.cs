@@ -30,11 +30,11 @@ public class Example1 : MonoBehaviour
     {
         hitColliders2 = Physics2D.OverlapCircleAll(transform.position, radius2, layerMask);
         hitColliders = Physics2D.OverlapCircleAll(transform.position, radius, layerMask);
-        if (hitColliders.Length == 0)
-        {
-            anim.SetBool("IsAttack", false);
-        }
         if (hitColliders2.Length == 0)
+        {
+            anim.SetBool("IsRun", false);
+        }
+        if (hitColliders.Length > 0)
         {
             anim.SetBool("IsRun", false);
         }
@@ -65,7 +65,7 @@ public class Example1 : MonoBehaviour
             {
                 if (hitColliders.Length > 0 && (stun == false))
                 {
-                    anim.SetBool("IsAttack", true);
+                    anim.SetTrigger("IsAttack");
                     if (transform.position.x - hitCollider.transform.position.x >= 0)
                     {
                         dir = Vector2.left;

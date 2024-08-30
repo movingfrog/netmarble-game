@@ -97,7 +97,7 @@ public class printLog : MonoBehaviour
             }
 
         }
-        if (Input.GetMouseButtonDown(0) || (Input.touchCount > 0))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F) || (Input.touchCount > 0))
         {
             Touch touch = new Touch();
             if (Input.touchCount != 0)
