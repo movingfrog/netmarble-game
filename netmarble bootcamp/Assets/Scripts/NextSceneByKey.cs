@@ -5,25 +5,32 @@ using UnityEngine;
 public class NextSceneByKey : MonoBehaviour
 {
     public GameObject BG;
+    public Vector2 Size;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
+        Collider2D[] cols = Physics2D.OverlapBoxAll(transform.position, Size, 0);
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (collision.gameObject.CompareTag("Player"))
+            foreach(Collider2D col in cols)
             {
-                BG.SetActive(true);
-                BG.GetComponent<TileRotatorUIReturn>().enabled = true;
+                if (col.gameObject.CompareTag("Elevator"))
+                {
+                    BG.SetActive(true);
+                    BG.GetComponent<TileRotatorUIReturn>().enabled = true;
+                }
             }
         }
+
+    }
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.white;
+        Gizmos.DrawWireCube(transform.position, Size);
     }
 }
