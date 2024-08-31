@@ -42,6 +42,7 @@ public class PlayerAttack2 : MonoBehaviour
                     if (collider.gameObject.CompareTag("Enemy"))
                     {
                         gameObject.layer = 10;
+                        GameObject.Find("PullSFX").GetComponent<AudioSource>().Play();
                         collider.transform.position = Vector2.Lerp(collider.transform.position, transform.position, 0.6f);
                         Damage = collider.GetComponent<EnemyHealth>();
                         Damage.curHealth -= 60f;

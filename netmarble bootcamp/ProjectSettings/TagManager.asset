@@ -10,6 +10,9 @@ TagManager:
   - Wall
   - PlayerHpBar
   - Elevator
+  - BgmManager
+  - panel
+  - SFXManager
   layers:
   - Default
   - TransparentFX

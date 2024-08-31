@@ -43,6 +43,7 @@ public class defaultAttack : MonoBehaviour
                         if (colliders.gameObject.CompareTag("Enemy"))
                         {
                             Debug.Log("때렸다!");
+                            GameObject.Find("AttackSFX").GetComponent<AudioSource>().Play();
                             colliders.GetComponent<Rigidbody2D>().velocity = new Vector2(3 * (colliders.transform.position.x - transform.position.x >= 0 ? 1 : -1), 3);
                             Damage = colliders.GetComponent<EnemyHealth>();
                             if (cri == 0)
@@ -67,7 +68,7 @@ public class defaultAttack : MonoBehaviour
                 }
             }
             else //평타 쿨타임 감소
-            { 
+            {
                 curtime -= Time.deltaTime; 
             }
         }

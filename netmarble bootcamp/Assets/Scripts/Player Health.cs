@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -76,11 +77,13 @@ public class PlayerHealth : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             rb.gravityScale = 2f;
+            GameObject.Find("DamageSFX").GetComponent<AudioSource>().Play();
             int dirc = ((transform.position.x - collision.gameObject.transform.position.x > 0) ? 1 : -1);
             rb.AddForce(new Vector2(dirc, 1) * 7, ForceMode2D.Impulse);
             gameObject.layer = 10;
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0.4f);
             curHP -= 5f;
+            Camera.main.DOShakePosition(0.5f, 1f, 10, 90f);
             Invoke("offDamage", 1.5f);
         }
         if (curHP <= 0)

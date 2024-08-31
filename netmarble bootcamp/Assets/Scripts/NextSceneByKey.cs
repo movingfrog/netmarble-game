@@ -6,16 +6,17 @@ public class NextSceneByKey : MonoBehaviour
 {
     public GameObject BG;
     public Vector2 Size;
-    void Start()
-    {
-
-    }
+    public static bool existEnemy = true;
 
     // Update is called once per frame
     void Update()
     {
         Collider2D[] cols = Physics2D.OverlapBoxAll(transform.position, Size, 0);
-        if (Input.GetKeyDown(KeyCode.F))
+        if (GameObject.FindGameObjectWithTag("Enemy") == null)
+        {
+            existEnemy = false;
+        }
+        if (Input.GetKeyDown(KeyCode.F) && !existEnemy)
         {
             foreach(Collider2D col in cols)
             {
