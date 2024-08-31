@@ -6,21 +6,18 @@ using UnityEngine.UI;
 
 public class soundManager : MonoBehaviour
 {
+    public static float saveVolume = 1f;
     Slider soundSlider;
-    GameObject panel;
+
+
     private void Awake()
     {
         soundSlider = GameObject.Find("Slider").GetComponent<Slider>();
-        panel = GameObject.FindGameObjectWithTag("panel");
         if (GameObject.FindGameObjectsWithTag("BgmManager").Length == 1)
             DontDestroyOnLoad(gameObject);
         else
             Destroy(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-    private void Start()
-    {
-        panel.SetActive(false);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -35,11 +32,18 @@ public class soundManager : MonoBehaviour
         else if (scene.name == "Lab" || scene.name == "Lab_2" || scene.name == "Lab_3")
         {
             GameObject.Find("LabBGM").GetComponent<AudioSource>().Play();
+            soundSlider = GameObject.Find("Slider").GetComponent<Slider>();
+        }
+        else if (scene.name == "Village")
+        {
+            soundSlider = GameObject.Find("Slider").GetComponent<Slider>();
         }
         else if (scene.name == "Tunnel" || scene.name == "Tunnel_2")
         {
             GameObject.Find("TunnelBGM").GetComponent<AudioSource>().Play();
+            soundSlider = GameObject.Find("Slider").GetComponent<Slider>();
         }
+        soundSlider.value = saveVolume;
     }
 
     private void OnDestroy()
@@ -49,16 +53,6 @@ public class soundManager : MonoBehaviour
 
     void FixedUpdate()
     {
-        GameObject.Find("mainBGM").GetComponent<AudioSource>().volume = GameObject.Find("LabBGM").GetComponent<AudioSource>().volume = GameObject.Find("TunnelBGM").GetComponent<AudioSource>().volume = soundSlider.value;
-    }
-
-    public void panelSummon()
-    {
-        panel.SetActive(true);
-    }
-
-    public void panelHide()
-    {
-        panel.SetActive(false);
+        saveVolume = GameObject.Find("mainBGM").GetComponent<AudioSource>().volume = GameObject.Find("LabBGM").GetComponent<AudioSource>().volume = GameObject.Find("TunnelBGM").GetComponent<AudioSource>().volume = soundSlider.value;
     }
 }

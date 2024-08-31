@@ -72,6 +72,22 @@ public class PlayerHealth : MonoBehaviour
         HPBar.fillAmount = curHP / maxHP;
     }
 
+    private void FixedUpdate()
+    {
+        if (!Input.anyKey)
+        {
+            if (curHP > 100)
+            {
+                curHP = 100;
+                return;
+            }
+            else
+            {
+                curHP += 0.04f;
+            }
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 8)

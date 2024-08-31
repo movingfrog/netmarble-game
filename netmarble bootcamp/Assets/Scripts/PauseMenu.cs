@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
     public GameObject BG;
+    public GameObject panel;
+    public Button[] buttons;
     void Start()
     {
         
@@ -39,5 +42,18 @@ public class PauseMenu : MonoBehaviour
     {
         //설정창 나타나게 하기
         Debug.Log("Setting Window Add");
+        panel.SetActive(true);
+        panel.transform.SetAsLastSibling();
+        buttons[0].interactable = false;
+        buttons[1].interactable = false;
+        buttons[2].interactable = false;
+    }
+
+    public void GoToBG()
+    {
+        panel.SetActive(false);
+        buttons[0].interactable = true;
+        buttons[1].interactable = true;
+        buttons[2].interactable = true;
     }
 }
