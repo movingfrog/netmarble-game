@@ -19,7 +19,7 @@ public class NextSceneByKey : MonoBehaviour
         {
             foreach(Collider2D col in cols)
             {
-                if (col.gameObject.CompareTag("Elevator"))
+                if (col.gameObject.CompareTag("Player"))
                 {
                     BG.SetActive(true);
                     BG.GetComponent<TileRotatorUIReturn>().enabled = true;
