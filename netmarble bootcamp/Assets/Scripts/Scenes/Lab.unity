@@ -9081,7 +9081,7 @@ GameObject:
   - component: {fileID: 1423097362}
   m_Layer: 5
   m_Name: BG
-  m_TagString: Untagged
+  m_TagString: PauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24607,6 +24607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BG: {fileID: 877129617}
+  PauseMenu: {fileID: 1423097360}
 --- !u!1 &1698699603
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject BG;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame

@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     public static bool isPause = false;
+    private GameObject pause;
     public GameObject Bg;
     //public GameObject canvas;
     void Start()
@@ -31,5 +34,5 @@ public class Pause : MonoBehaviour
             }
 
         }
-    }
+    } 
 }

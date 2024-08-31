@@ -83,7 +83,7 @@ public class PlayerHealth : MonoBehaviour
             gameObject.layer = 10;
             gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, 0.4f);
             curHP -= 5f;
-            Camera.main.DOShakePosition(0.5f, 1f, 10, 90f);
+            Camera.main.DOShakePosition(0.5f, 1f, 7, 10f);
             Invoke("offDamage", 1.5f);
         }
         if (curHP <= 0)
