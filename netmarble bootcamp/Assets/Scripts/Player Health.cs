@@ -88,7 +88,7 @@ public class PlayerHealth : MonoBehaviour
         }
         if (curHP <= 0)
         {
-            gameObject.SetActive(false);
+            SceneManager.LoadScene("GameOver");
         }
     }
 

@@ -22,7 +22,6 @@ public class GoMainCodes : MonoBehaviour
         // 코루틴 시작
         StartCoroutine(LoadMainScene());
     }
-
     IEnumerator LoadMainScene()
     {
         Time.timeScale = 1f;

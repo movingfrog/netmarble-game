@@ -7077,6 +7077,10 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 1930836706}
+    - target: {fileID: -650076923029328768, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
+      propertyPath: goMainCodes
+      value: 
+      objectReference: {fileID: 1686291562}
     - target: {fileID: 86251409734312881, guid: e8d1fa1f5cc2f7241a50b9c3d5ed6466, type: 3}
       propertyPath: m_Name
       value: Player
