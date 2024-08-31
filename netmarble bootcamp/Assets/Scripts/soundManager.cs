@@ -10,14 +10,17 @@ public class soundManager : MonoBehaviour
     GameObject panel;
     private void Awake()
     {
-        soundSlider = FindObjectOfType<Slider>();
+        soundSlider = GameObject.Find("Slider").GetComponent<Slider>();
         panel = GameObject.FindGameObjectWithTag("panel");
-        panel.SetActive(false);
         if (GameObject.FindGameObjectsWithTag("BgmManager").Length == 1)
             DontDestroyOnLoad(gameObject);
         else
             Destroy(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void Start()
+    {
+        panel.SetActive(false);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)

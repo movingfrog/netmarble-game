@@ -12,6 +12,7 @@ public class Skill2Effect : MonoBehaviour
             Debug.Log("¶§·È´Ù!");
             Damage = collision.GetComponent<EnemyHealth>();
             Damage.curHealth -= PlayerAttack1.damage;
+            GameObject.Find("TSFX").GetComponent<AudioSource>().Play();
         }
     }
 }
