@@ -15,6 +15,7 @@ TagManager:
   - SFXManager
   - SFX
   - PauseMenu
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

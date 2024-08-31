@@ -7,19 +7,19 @@ public class PlayerAttack1 : MonoBehaviour
     public GameObject skillRange;
     public GameObject Effect;
     [SerializeField]
-    private float rushPower;
+    private float rushPower = 2f;
     [SerializeField]
     private float maxRushPower = 10;
     [SerializeField]
     private float maxWait = 5f;
-    public float wait;
+    public float wait = 1f;
     [SerializeField]
     private float uping = 5f;
     Animator ani;
     Tween mytween;
     bool isEndChraging;
     bool boolsoneshot;
-    public static float damage;
+    public static float damage = 10f;
 
     public static bool isSkill2;
     private void Start()
@@ -77,7 +77,7 @@ public class PlayerAttack1 : MonoBehaviour
             skillRange.SetActive(true);
             ani.SetTrigger("isAttack");
             mytween = transform.DOMoveX(transform.position.x + (transform.localScale.x > 0 ? rushPower : -rushPower), 0.5f).SetEase(Ease.OutQuad);
-            rushPower = 0;
+            rushPower = 2f;
             StartCoroutine("skillDelay");
             StartCoroutine("SkillWaiting");
             coolTime.skill.fillAmount = wait / 5;
@@ -118,8 +118,8 @@ public class PlayerAttack1 : MonoBehaviour
     {
         Debug.Log(isSkill2);
         yield return new WaitForSeconds(wait);
-        wait = 0;
+        wait = 1;
         isSkill2 = false;
-        damage = 0;
+        damage = 10;
     }
 }

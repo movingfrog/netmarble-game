@@ -9,6 +9,14 @@ public class Bullets : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        if (Example1.dir == Vector2.left)
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
         rb.velocity = Example1.dir * 10;
         Destroy(gameObject, 2f);
     }

@@ -13,6 +13,7 @@ public class Pause : MonoBehaviour
     void Start()
     {
         Bg.transform.SetAsLastSibling();
+        isPause = false;
     }
 
     // Update is called once per frame
